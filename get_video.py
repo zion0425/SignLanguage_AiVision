@@ -20,23 +20,6 @@ output_file_path = "output3.mp4"
 fourcc = cv2.VideoWriter_fourcc(*"XVID")
 output_video = cv2.VideoWriter(output_file_path, fourcc, fps, (width, height))
 
-'''
-# 비디오 무한반복
-while True:
-    ret, frame = video.read()
-    if not ret:
-        # 비디오 재생이 끝나면 다시 처음부터 재생
-        video.release()
-        video = cv2.VideoCapture(video_file_path)
-        continue
-    # 출력 비디오에 프레임 쓰기
-    output_video.write(frame)
-
-    # ESC 키를 누르면 무한반복 종료
-    if cv2.waitKey(1) == 27:
-        break
-'''
-
 # 비디오 30초 반복
 for i in range(fps*30):
     ret, frame = video.read()
