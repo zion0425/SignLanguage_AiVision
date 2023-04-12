@@ -16,8 +16,6 @@ src1 = '/Users/sunukkim/Downloads/sign-language-video/1.Training/07/NIA_SL_WORD'
 src2 = '_REAL07_F.mp4'
 dst = '/Users/sunukkim/PycharmProjects/sign_language_AIVision/sign_lang_video/'
 
-#res_list = ["이십", "0"]
-
 for num in target1:
     target = format(num, '04')
     #print(target)
