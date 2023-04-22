@@ -7,7 +7,7 @@ from pathlib import Path
 
 actions = []
 
-video_file_path = '/Users/sunukkim/PycharmProjects/sign_language_AIVision/videos'
+video_file_path = 'videos'
 for file in Path(video_file_path).iterdir():
     print(file.stem)
     actions.append(file.stem)
