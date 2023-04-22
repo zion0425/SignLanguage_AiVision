@@ -2,8 +2,16 @@ import cv2
 import mediapipe as mp
 import numpy as np
 from tensorflow.keras.models import load_model
+from PIL import ImageFont, ImageDraw, Image
+from pathlib import Path
 
-actions = ['1', '2', '3']
+actions = []
+
+video_file_path = '/Users/sunukkim/PycharmProjects/sign_language_AIVision/videos'
+for file in Path(video_file_path).iterdir():
+    print(file.stem)
+    actions.append(file.stem)
+
 seq_length = 30
 
 model = load_model('models/model.h5')
@@ -25,6 +33,19 @@ cap = cv2.VideoCapture(0)
 
 seq = []
 action_seq = []
+
+#한글 폰트 경로 지정
+fontpath = "/usr/local/share/fonts/NanumFont/NanumGothic.ttf"
+font = ImageFont.truetype(fontpath,20)
+
+def put_korean_text(image, text, position):
+    font_size = 50
+    font = ImageFont.truetype(fontpath, font_size)
+    img_pil = Image.fromarray(image)
+    draw = ImageDraw.Draw(img_pil)
+    draw.text(position, text, font=font, fill=(255, 255, 255))
+    image = np.array(img_pil)
+    return image
 
 while cap.isOpened():
     ret, img = cap.read()
@@ -50,7 +71,7 @@ while cap.isOpened():
 
             # Get angle using arcos of dot product
             angle = np.arccos(np.einsum('nt,nt->n',
-                v[[0,1,2,4,5,6,8,9,10,12,13,14,16,17,18],:], 
+                v[[0,1,2,4,5,6,8,9,10,12,13,14,16,17,18],:],
                 v[[1,2,3,5,6,7,9,10,11,13,14,15,17,18,19],:])) # [15,]
 
             angle = np.degrees(angle) # Convert radian to degree
@@ -84,7 +105,11 @@ while cap.isOpened():
             if action_seq[-1] == action_seq[-2] == action_seq[-3]:
                 this_action = action
 
-            cv2.putText(img, f'{this_action.upper()}', org=(int(res.landmark[0].x * img.shape[1]), int(res.landmark[0].y * img.shape[0] + 20)), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1, color=(255, 255, 255), thickness=2)
+            # cv2.putText(img, f'{this_action.upper()}', org=(int(res.landmark[0].x * img.shape[1]), int(res.landmark[0].y * img.shape[0] + 20)), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1, color=(255, 255, 255), thickness=2)
+
+            # Put Korean text
+            position = (int(res.landmark[0].x * img.shape[1]), int(res.landmark[0].y * img.shape[0] + 20))
+            img = put_korean_text(img, this_action.upper(), position)
 
     # out.write(img0)
     # out2.write(img)
