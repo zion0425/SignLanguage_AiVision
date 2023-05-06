@@ -23,9 +23,11 @@ sign_list = ['이십', '이십일', '이십이', '이십삼', '이십사', '이�
 
 # 비디오가 저장되어있는 경로
 src1 = '/Users/sunukkim/Downloads/sign-language-video/1.Training/07/NIA_SL_WORD'
-src2 = '_REAL07_F.mp4'
+src2 = '_REAL07_'
+src3 = '.mp4'
+vid_angle_scr = ['D','F','L','R','U']
 
-# 선정한 수어동작 30개를 저장할 경로
+# 선정한 수어동작 영상 30개를 저장할 경로
 dst = '/Users/sunukkim/PycharmProjects/sign_language_AIVision/sign_lang_video/'
 
 # 1501~3000까지 반복
@@ -55,7 +57,9 @@ for num in target1:
         # dst에 저장된 경로에 수어동작 비디오 복사 format: (수어동작명).mp4
         for sign in sign_list:
             if sign == sign_name:
-                shutil.copyfile(src, dst + sign_name + '.mp4')
+                for angle in vid_angle_scr:
+                    shutil.copyfile(src + angle + src3, dst + sign_name + '_' + angle + ".mp4")
+                #shutil.copyfile(src, dst + sign_name + '.mp4')
 
                 # 선택된 수어 동작들 txt파일에 작성
-                selected_sign_lang.write('%s\n'%sign_name)
+                # selected_sign_lang.write('%s\n'%sign_name)

@@ -14,7 +14,7 @@ for file in Path(video_file_path).iterdir():
 
 seq_length = 30
 
-model = load_model('models/model.h5')
+model = load_model('models/second_model.h5')
 # MediaPipe hands model
 mp_hands = mp.solutions.hands
 mp_drawing = mp.solutions.drawing_utils

@@ -1,7 +1,7 @@
 import cv2
 from pathlib import Path
 
-for file in Path('/Users/sunukkim/PycharmProjects/sign_language_AIVision/sign_lang_video/').iterdir():
+for file in Path('/Users/sunukkim/PycharmProjects/sign_language_AIVision/mixed_videos/').iterdir():
     # 재생될 영상 파일 경로
     video_file_path =str(file)
 
