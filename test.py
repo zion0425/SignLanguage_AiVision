@@ -6,15 +6,15 @@ from PIL import ImageFont, ImageDraw, Image
 from pathlib import Path
 
 actions = []
-
 video_file_path = 'videos'
 for file in Path(video_file_path).iterdir():
     print(file.stem)
     actions.append(file.stem)
 
+print(actions)
 seq_length = 30
 
-model = load_model('models/second_model.h5')
+model = load_model('models/fourth_model.h5')
 # MediaPipe hands model
 mp_hands = mp.solutions.hands
 mp_drawing = mp.solutions.drawing_utils
@@ -25,22 +25,17 @@ hands = mp_hands.Hands(
 
 cap = cv2.VideoCapture(0)
 
-# w = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
-# h = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
-# fourcc = cv2.VideoWriter_fourcc('m', 'p', '4', 'v')
-# out = cv2.VideoWriter('input.mp4', fourcc, cap.get(cv2.CAP_PROP_FPS), (w, h))
-# out2 = cv2.VideoWriter('output.mp4', fourcc, cap.get(cv2.CAP_PROP_FPS), (w, h))
-
 seq = []
 action_seq = []
 
 #한글 폰트 경로 지정
-fontpath = "/usr/local/share/fonts/NanumFont/NanumGothic.ttf"
-font = ImageFont.truetype(fontpath,20)
+fontpath = "/usr/local/share/fonts/NanumFont/NanumGothicBold.ttf"
+# fontpath = "AppleGothic.ttf"
+font = ImageFont.truetype(fontpath,40, encoding='unic')
 
 def put_korean_text(image, text, position):
     font_size = 50
-    font = ImageFont.truetype(fontpath, font_size)
+    font = ImageFont.truetype(fontpath, font_size, encoding='unic')
     img_pil = Image.fromarray(image)
     draw = ImageDraw.Draw(img_pil)
     draw.text(position, text, font=font, fill=(255, 255, 255))
@@ -105,14 +100,10 @@ while cap.isOpened():
             if action_seq[-1] == action_seq[-2] == action_seq[-3]:
                 this_action = action
 
-            # cv2.putText(img, f'{this_action.upper()}', org=(int(res.landmark[0].x * img.shape[1]), int(res.landmark[0].y * img.shape[0] + 20)), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1, color=(255, 255, 255), thickness=2)
-
             # Put Korean text
             position = (int(res.landmark[0].x * img.shape[1]), int(res.landmark[0].y * img.shape[0] + 20))
             img = put_korean_text(img, this_action.upper(), position)
 
-    # out.write(img0)
-    # out2.write(img)
     cv2.imshow('img', img)
     if cv2.waitKey(1) == ord('q'):
         break
