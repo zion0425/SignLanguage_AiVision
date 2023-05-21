@@ -185,16 +185,6 @@ border-bottom: none;
      </property>
     </widget>
    </widget>
-   <widget class="QGraphicsView" name="sign_video">
-    <property name="geometry">
-     <rect>
-      <x>310</x>
-      <y>190</y>
-      <width>431</width>
-      <height>321</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QLabel" name="label1">
     <property name="geometry">
      <rect>
@@ -212,6 +202,19 @@ border-bottom: none;
     </property>
     <property name="text">
      <string>권투 수어동작을 학습하세요</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>190</y>
+      <width>561</width>
+      <height>291</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
     </property>
    </widget>
   </widget>
