@@ -7,6 +7,8 @@ from PyQt5.uic import loadUi
 from PyQt5.uic.properties import QtCore
 from PyQt5.QtCore import Qt
 
+from test_main_window import  MainWindow
+
 
 class LoginWindow(QMainWindow):
     def __init__(self):
@@ -26,8 +28,13 @@ class LoginWindow(QMainWindow):
         # 로그인 처리 로직
         if email == 'admin' and password == 'password':
             QMessageBox.information(self, '로그인', '로그인 성공')
+            self.hide()
+            self.main_window = MainWindow()
+            self.main_window.show()
         else:
             QMessageBox.warning(self, '로그인', '로그인 실패')
+
+
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
