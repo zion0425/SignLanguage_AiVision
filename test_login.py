@@ -23,6 +23,7 @@ class LoginWindow(QMainWindow):
 
     def login(self):
         email = self.email_input.text()
+        print(self.email_input.width())
         password = self.passwd_input.text()
 
         # 로그인 처리 로직

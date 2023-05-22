@@ -188,8 +188,8 @@ border-bottom: none;
    <widget class="QLabel" name="label1">
     <property name="geometry">
      <rect>
-      <x>320</x>
-      <y>140</y>
+      <x>290</x>
+      <y>120</y>
       <width>441</width>
       <height>31</height>
      </rect>
@@ -204,11 +204,43 @@ border-bottom: none;
      <string>권투 수어동작을 학습하세요</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="sign_video">
     <property name="geometry">
      <rect>
-      <x>330</x>
-      <y>190</y>
+      <x>300</x>
+      <y>160</y>
+      <width>561</width>
+      <height>291</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label2">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>460</y>
+      <width>441</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>22</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>수어 인식하기</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="webcam">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>500</y>
       <width>561</width>
       <height>291</height>
      </rect>

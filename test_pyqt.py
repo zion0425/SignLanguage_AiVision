@@ -58,7 +58,7 @@ def run():
     while running:
         ret, img = cap.read()
         if ret:
-            mg = img.copy()
+            img = img.copy()
 
             img = cv2.flip(img, 1)
             img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
