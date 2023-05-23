@@ -1,3 +1,4 @@
+import time
 from PyQt5 import QtGui, QtWidgets
 from PyQt5.QtWidgets import QWidget, QApplication, QLabel, QVBoxLayout, QMainWindow
 from PyQt5.QtGui import QPixmap
@@ -88,6 +89,7 @@ class WebCamThread(QThread):
 
         seq = []
         action_seq = []
+        action_start_time = None
 
         while self._run_flag:
             ret, img = cap.read()
@@ -145,14 +147,21 @@ class WebCamThread(QThread):
                         action_seq.append(action)
 
                         if len(action_seq) < 3:
+                            action_start_time = None
                             continue
 
                         this_action = '?'
                         if action_seq[-1] == action_seq[-2] == action_seq[-3]:
-                            this_action = action
+                            if action_start_time is None:
+                                action_start_time = time.time()
+                            elif time.time() - action_start_time >= 3:
+                                this_action = action
+                                print(this_action)
+                                action_start_time = None
 
                         # Put Korean text
                         position = (int(res.landmark[0].x * img.shape[1]), int(res.landmark[0].y * img.shape[0] + 20))
+
                         img = self.put_korean_text(img, this_action.upper(), position)
 
                 # img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
