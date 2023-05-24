@@ -80,12 +80,11 @@ class WebCamThread(QThread):
 
     def run(self):
         # capture from web cam
-        # cap = cv2.VideoCapture('videos/권투.mp4')
         cap = cv2.VideoCapture(0)
 
-        # 영상의 FPS 정보 가져오기
-        fps = cap.get(cv2.CAP_PROP_FPS)
-        delay = int(1000 / fps)  # 재생 주기(ms)
+        # # 영상의 FPS 정보 가져오기
+        # fps = cap.get(cv2.CAP_PROP_FPS)
+        # delay = int(1000 / fps)  # 재생 주기(ms)
 
         seq = []
         action_seq = []

@@ -6,7 +6,7 @@ from PIL import ImageFont, ImageDraw, Image
 from pathlib import Path
 
 actions = []
-video_file_path = 'videos'
+video_file_path = '../videos'
 for file in Path(video_file_path).iterdir():
     print(file.stem)
     actions.append(file.stem)
@@ -14,7 +14,7 @@ for file in Path(video_file_path).iterdir():
 print(actions)
 seq_length = 30
 
-model = load_model('models/fourth_model.h5')
+model = load_model('../models/fourth_model.h5')
 # MediaPipe hands model
 mp_hands = mp.solutions.hands
 mp_drawing = mp.solutions.drawing_utils
