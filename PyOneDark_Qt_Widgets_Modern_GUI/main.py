@@ -76,90 +76,104 @@ class MainWindow(QMainWindow):
         # GET BT CLICKED
         btn = SetupMainWindow.setup_btns(self)
 
-        # Remove Selection If Clicked By "btn_close_left_column"
-        if btn.objectName() != "btn_settings":
-            self.ui.left_menu.deselect_all_tab()
-
-        # Get Title Bar Btn And Reset Active         
-        top_settings = MainFunctions.get_title_bar_btn(self, "btn_top_settings")
-        top_settings.set_active(False)
-
         # LEFT MENU
         # ///////////////////////////////////////////////////////////////
-        
-        # HOME BTN
+
+        # OPEN PAGE Home
         if btn.objectName() == "btn_home":
-            # Select Menu
+            # Select menu
             self.ui.left_menu.select_only_one(btn.objectName())
 
-            # Load Page 1
+            # Load page
             MainFunctions.set_page(self, self.ui.load_pages.page_1)
 
-        # WIDGETS BTN
-        if btn.objectName() == "btn_widgets":
-            # Select Menu
+        # OPEN PAGE learn sign lang
+        if btn.objectName() == "btn_learn_sign_lang":
+            # Select menu
             self.ui.left_menu.select_only_one(btn.objectName())
 
-            # Load Page 2
+            # Load page
             MainFunctions.set_page(self, self.ui.load_pages.page_2)
 
-        # LOAD USER PAGE
-        if btn.objectName() == "btn_add_user":
-            # Select Menu
+        # OPEN PAGE dictionary
+        if btn.objectName() == "btn_dict":
+            # Select menu
             self.ui.left_menu.select_only_one(btn.objectName())
 
-            # Load Page 3 
+            # Load page
             MainFunctions.set_page(self, self.ui.load_pages.page_3)
 
-        # BOTTOM INFORMATION
-        if btn.objectName() == "btn_info":
-            # CHECK IF LEFT COLUMN IS VISIBLE
-            if not MainFunctions.left_column_is_visible(self):
-                self.ui.left_menu.select_only_one_tab(btn.objectName())
+        # OPEN PAGE dictionary
+        if btn.objectName() == "btn_word_book":
+            # Select menu
+            self.ui.left_menu.select_only_one(btn.objectName())
 
+            # Load page
+            MainFunctions.set_page(self, self.ui.load_pages.page_4)
+
+        # GET TOP SETTINGS
+        top_btn_settings = MainFunctions.get_title_bar_btn(self, "btn_top_settings")
+
+        # OPEN INFO
+        if btn.objectName() == "btn_info" or btn.objectName() == "btn_close_left_column":
+            #Disable selection on title bar
+            top_btn_settings.set_active(False)
+
+            # Check if left column is visible
+            if not MainFunctions.left_column_is_visible(self):
                 # Show / Hide
                 MainFunctions.toggle_left_column(self)
                 self.ui.left_menu.select_only_one_tab(btn.objectName())
             else:
-                if btn.objectName() == "btn_close_left_column":
+                if btn.objectName() == "btn_close_left_column": # This BTN is default btn of left column on top
+                    # Deselect all tabs selected
                     self.ui.left_menu.deselect_all_tab()
+
                     # Show / Hide
                     MainFunctions.toggle_left_column(self)
-                
+
+                #Select tab
                 self.ui.left_menu.select_only_one_tab(btn.objectName())
 
-            # Change Left Column Menu
+            # Change left Page
             if btn.objectName() != "btn_close_left_column":
                 MainFunctions.set_left_column_menu(
-                    self, 
+                    self,
                     menu = self.ui.left_column.menus.menu_2,
                     title = "Info tab",
                     icon_path = Functions.set_svg_icon("icon_info.svg")
                 )
 
-        # SETTINGS LEFT
+        # OPEN PAGE Setting
         if btn.objectName() == "btn_settings" or btn.objectName() == "btn_close_left_column":
-            # CHECK IF LEFT COLUMN IS VISIBLE
+            #Disable selection on title bar
+            top_btn_settings.set_active(False)
+
+            # Check if left column is visible
             if not MainFunctions.left_column_is_visible(self):
                 # Show / Hide
                 MainFunctions.toggle_left_column(self)
                 self.ui.left_menu.select_only_one_tab(btn.objectName())
             else:
-                if btn.objectName() == "btn_close_left_column":
+                if btn.objectName() == "btn_close_left_column":  # This BTN is default btn of left column on top
+                    # Deselect all tabs selected
                     self.ui.left_menu.deselect_all_tab()
+
                     # Show / Hide
                     MainFunctions.toggle_left_column(self)
+
+                # Select tab
                 self.ui.left_menu.select_only_one_tab(btn.objectName())
 
-            # Change Left Column Menu
+            # Change left Page
             if btn.objectName() != "btn_close_left_column":
                 MainFunctions.set_left_column_menu(
-                    self, 
+                    self,
                     menu = self.ui.left_column.menus.menu_1,
-                    title = "Settings Left Column",
+                    title = "Settings tab",
                     icon_path = Functions.set_svg_icon("icon_settings.svg")
                 )
-        
+
         # TITLE BAR MENU
         # ///////////////////////////////////////////////////////////////
         
@@ -177,9 +191,13 @@ class MainWindow(QMainWindow):
                 # Show / Hide
                 MainFunctions.toggle_right_column(self)
 
-            # Get Left Menu Btn            
-            top_settings = MainFunctions.get_left_menu_btn(self, "btn_settings")
-            top_settings.set_active_tab(False)            
+            # Get Left Menu Settings
+            btn_settings = MainFunctions.get_left_menu_btn(self, "btn_settings")
+            btn_settings.set_active_tab(False)
+
+            # Get Left Menu Btn
+            btn_info = MainFunctions.get_left_menu_btn(self, "btn_info")
+            btn_info.set_active_tab(False)
 
         # DEBUG
         print(f"Button {btn.objectName()}, clicked!")

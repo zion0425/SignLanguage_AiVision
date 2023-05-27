@@ -185,7 +185,7 @@ border-bottom: none;
      </property>
     </widget>
    </widget>
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="label1">
     <property name="geometry">
      <rect>
       <x>330</x>
