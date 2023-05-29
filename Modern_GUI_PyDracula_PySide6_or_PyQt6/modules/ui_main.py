@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'maingYrMxw.ui'
+## Form generated from reading UI file 'mainwKWJlH.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -1045,37 +1045,42 @@ class Ui_MainWindow(object):
         self.scrollArea_2.setWidgetResizable(True)
         self.learning_container = QWidget()
         self.learning_container.setObjectName(u"learning_container")
-        self.learning_container.setGeometry(QRect(0, -2, 1170, 1032))
+        self.learning_container.setGeometry(QRect(0, 0, 1178, 603))
         self.verticalLayout_23 = QVBoxLayout(self.learning_container)
+        self.verticalLayout_23.setSpacing(0)
         self.verticalLayout_23.setObjectName(u"verticalLayout_23")
-        self.verticalLayout_22 = QVBoxLayout()
-        self.verticalLayout_22.setObjectName(u"verticalLayout_22")
-        self.vid_label = QLabel(self.learning_container)
+        self.verticalLayout_23.setContentsMargins(0, 0, 0, 0)
+        self.frame = QFrame(self.learning_container)
+        self.frame.setObjectName(u"frame")
+        self.frame.setFrameShape(QFrame.StyledPanel)
+        self.frame.setFrameShadow(QFrame.Raised)
+        self.frame_2 = QFrame(self.frame)
+        self.frame_2.setObjectName(u"frame_2")
+        self.frame_2.setGeometry(QRect(0, 0, 1171, 301))
+        self.frame_2.setFrameShape(QFrame.StyledPanel)
+        self.frame_2.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_6 = QHBoxLayout(self.frame_2)
+        self.horizontalLayout_6.setSpacing(0)
+        self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
+        self.vid_label = QLabel(self.frame_2)
         self.vid_label.setObjectName(u"vid_label")
-        self.vid_label.setMinimumSize(QSize(620, 480))
-        self.vid_label.setMaximumSize(QSize(620, 480))
 
-        self.verticalLayout_22.addWidget(self.vid_label)
+        self.horizontalLayout_6.addWidget(self.vid_label)
 
-        self.label_3 = QLabel(self.learning_container)
-        self.label_3.setObjectName(u"label_3")
+        self.webcam_label = QLabel(self.frame_2)
+        self.webcam_label.setObjectName(u"webcam_label")
+        self.webcam_label.setMargin(10)
 
-        self.verticalLayout_22.addWidget(self.label_3)
+        self.horizontalLayout_6.addWidget(self.webcam_label)
 
-        self.label_4 = QLabel(self.learning_container)
-        self.label_4.setObjectName(u"label_4")
-        self.label_4.setMinimumSize(QSize(620, 480))
-        self.label_4.setMaximumSize(QSize(619, 480))
+        self.about_video = QLabel(self.frame)
+        self.about_video.setObjectName(u"about_video")
+        self.about_video.setGeometry(QRect(100, 320, 391, 41))
+        self.about_webcam = QLabel(self.frame)
+        self.about_webcam.setObjectName(u"about_webcam")
+        self.about_webcam.setGeometry(QRect(690, 320, 391, 41))
 
-        self.verticalLayout_22.addWidget(self.label_4)
-
-        self.label_5 = QLabel(self.learning_container)
-        self.label_5.setObjectName(u"label_5")
-
-        self.verticalLayout_22.addWidget(self.label_5)
-
-
-        self.verticalLayout_23.addLayout(self.verticalLayout_22)
+        self.verticalLayout_23.addWidget(self.frame)
 
         self.scrollArea_2.setWidget(self.learning_container)
 
@@ -1223,7 +1228,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 353, 218))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 218, 218))
         self.scrollAreaWidgetContents.setStyleSheet(u" QScrollBar:vertical {\n"
 "	border: none;\n"
 "    background: rgb(52, 59, 72);\n"
@@ -1633,9 +1638,9 @@ class Ui_MainWindow(object):
 #endif // QT_CONFIG(tooltip)
         self.closeAppBtn.setText("")
         self.vid_label.setText("")
-        self.label_3.setText(QCoreApplication.translate("MainWindow", u"some text about video", None))
-        self.label_4.setText("")
-        self.label_5.setText(QCoreApplication.translate("MainWindow", u"text about webcam", None))
+        self.webcam_label.setText("")
+        self.about_video.setText(QCoreApplication.translate("MainWindow", u"TextLabel about video", None))
+        self.about_webcam.setText(QCoreApplication.translate("MainWindow", u"TextLabel about webcam", None))
         self.labelBoxBlenderInstalation.setText(QCoreApplication.translate("MainWindow", u"FILE BOX", None))
         self.lineEdit.setText("")
         self.lineEdit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Type here", None))
