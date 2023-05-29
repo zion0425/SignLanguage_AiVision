@@ -10,6 +10,7 @@ actions = ['일본어', '솔직하다', '오빠', '할아버지', '어른', '물
 
 seq_length = 30
 model = load_model('/Users/sion/Desktop/University/Modern_GUI_PyDracula_PySide6_or_PyQt6/models/fourth_model.h5')
+
 # MediaPipe hands model
 mp_hands = mp.solutions.hands
 mp_drawing = mp.solutions.drawing_utils
@@ -20,8 +21,6 @@ hands = mp_hands.Hands(
 
 #한글 폰트 경로 지정
 fontpath = "/Library/Fonts/NanumGothic.ttf"
-# fontpath = "fonts/NanumGothic.ttf"
-# fontpath = "AppleGothic.ttf"
 font = ImageFont.truetype(fontpath,40, encoding='unic')
 
 class WebCamThread(QThread):
