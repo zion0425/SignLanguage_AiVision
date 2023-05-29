@@ -2,8 +2,15 @@ import cv2
 import mediapipe as mp
 import numpy as np
 import time, os
+from pathlib import Path
 
-actions = ['output', 'output2', 'output3']
+actions = []
+
+video_file_path = '/Users/sunukkim/PycharmProjects/sign_language_AIVision/videos'
+for file in Path(video_file_path).iterdir():
+    print(file.stem)
+    actions.append(file.stem)
+
 seq_length = 30
 secs_for_action = 30
 
@@ -23,9 +30,9 @@ for action in actions:
     full_seq_data = []
 
     # Get video files
-    video_files = [f for f in os.listdir('sign_language_video') if f.endswith('.mp4') and f.startswith(action)]
+    video_files = [f for f in os.listdir('videos') if f.endswith('.mp4') and f.startswith(action)]
     for video_file in video_files:
-        cap = cv2.VideoCapture(os.path.join('sign_language_video', video_file))
+        cap = cv2.VideoCapture(os.path.join('videos', video_file))
 
         while cap.isOpened():
             ret, img = cap.read()
@@ -33,7 +40,7 @@ for action in actions:
             if not ret:
                 break
 
-            img = cv2.flip(img, 1)
+            #img = cv2.flip(img, 1)
             img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
             result = hands.process(img)
             img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
