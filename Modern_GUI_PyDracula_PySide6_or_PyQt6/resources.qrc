@@ -7,6 +7,12 @@
         ]>
 <RCC>
   <qresource prefix="images">
+    <file>images/images/age.png</file>
+    <file>images/images/birth.png</file>
+    <file>images/images/character.png</file>
+    <file>images/images/family.png</file>
+    <file>images/images/hobby.png</file>
+    <file>images/images/language.png</file>
     <file>images/images/PyDracula.png</file>
     <file>images/images/PyDracula_vertical.png</file>
     <file>images/images/ESL_logo_small.png</file>

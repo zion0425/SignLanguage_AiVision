@@ -1874,7 +1874,7 @@ p, li { white-space: pre-wrap; }
                       <string notr="true">background: transparent;</string>
                      </property>
                      <property name="currentIndex">
-                      <number>1</number>
+                      <number>4</number>
                      </property>
                      <widget class="QWidget" name="home">
                       <property name="styleSheet">
@@ -2292,7 +2292,7 @@ background-repeat: no-repeat;</string>
                                 <rect>
                                  <x>0</x>
                                  <y>0</y>
-                                 <width>218</width>
+                                 <width>317</width>
                                  <height>218</height>
                                 </rect>
                                </property>
@@ -2849,6 +2849,215 @@ background-repeat: no-repeat;</string>
                           <set>Qt::AlignCenter</set>
                          </property>
                         </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                     <widget class="QWidget" name="choose_course">
+                      <layout class="QVBoxLayout" name="verticalLayout_24">
+                       <item>
+                        <layout class="QVBoxLayout" name="verticalLayout_22">
+                         <item>
+                          <widget class="QLabel" name="label_2">
+                           <property name="font">
+                            <font>
+                             <family>Segoe UI</family>
+                             <pointsize>-1</pointsize>
+                             <weight>50</weight>
+                             <italic>false</italic>
+                             <bold>false</bold>
+                            </font>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">font-size: 38px;</string>
+                           </property>
+                           <property name="text">
+                            <string>학습과정</string>
+                           </property>
+                           <property name="alignment">
+                            <set>Qt::AlignCenter</set>
+                           </property>
+                          </widget>
+                         </item>
+                         <item>
+                          <widget class="QFrame" name="frame_4">
+                           <property name="frameShape">
+                            <enum>QFrame::StyledPanel</enum>
+                           </property>
+                           <property name="frameShadow">
+                            <enum>QFrame::Raised</enum>
+                           </property>
+                           <layout class="QVBoxLayout" name="verticalLayout_25">
+                            <item>
+                             <layout class="QHBoxLayout" name="horizontalLayout_7">
+                              <item>
+                               <widget class="QPushButton" name="hobby_btn">
+                                <property name="minimumSize">
+                                 <size>
+                                  <width>221</width>
+                                  <height>244</height>
+                                 </size>
+                                </property>
+                                <property name="maximumSize">
+                                 <size>
+                                  <width>221</width>
+                                  <height>244</height>
+                                 </size>
+                                </property>
+                                <property name="styleSheet">
+                                 <string notr="true">background-image: url(:/images/images/images/hobby.png);
+</string>
+                                </property>
+                                <property name="text">
+                                 <string/>
+                                </property>
+                               </widget>
+                              </item>
+                              <item>
+                               <widget class="QPushButton" name="character_btn">
+                                <property name="minimumSize">
+                                 <size>
+                                  <width>221</width>
+                                  <height>244</height>
+                                 </size>
+                                </property>
+                                <property name="maximumSize">
+                                 <size>
+                                  <width>221</width>
+                                  <height>244</height>
+                                 </size>
+                                </property>
+                                <property name="styleSheet">
+                                 <string notr="true">background-image: url(:/images/images/images/character.png);
+background-repeat: no-repeat;
+background-position: center;
+</string>
+                                </property>
+                                <property name="text">
+                                 <string/>
+                                </property>
+                               </widget>
+                              </item>
+                              <item>
+                               <widget class="QPushButton" name="family_btn">
+                                <property name="minimumSize">
+                                 <size>
+                                  <width>221</width>
+                                  <height>244</height>
+                                 </size>
+                                </property>
+                                <property name="maximumSize">
+                                 <size>
+                                  <width>221</width>
+                                  <height>244</height>
+                                 </size>
+                                </property>
+                                <property name="styleSheet">
+                                 <string notr="true">background-image: url(:/images/images/images/family.png);
+background-repeat: no-repeat;
+background-position: center;
+</string>
+                                </property>
+                                <property name="text">
+                                 <string/>
+                                </property>
+                               </widget>
+                              </item>
+                             </layout>
+                            </item>
+                           </layout>
+                          </widget>
+                         </item>
+                         <item>
+                          <widget class="QFrame" name="frame_3">
+                           <property name="frameShape">
+                            <enum>QFrame::StyledPanel</enum>
+                           </property>
+                           <property name="frameShadow">
+                            <enum>QFrame::Raised</enum>
+                           </property>
+                           <layout class="QVBoxLayout" name="verticalLayout_26">
+                            <item>
+                             <layout class="QHBoxLayout" name="horizontalLayout_8">
+                              <item>
+                               <widget class="QPushButton" name="age_btn">
+                                <property name="minimumSize">
+                                 <size>
+                                  <width>221</width>
+                                  <height>244</height>
+                                 </size>
+                                </property>
+                                <property name="maximumSize">
+                                 <size>
+                                  <width>221</width>
+                                  <height>244</height>
+                                 </size>
+                                </property>
+                                <property name="styleSheet">
+                                 <string notr="true">background-image: url(:/images/images/images/age.png);
+background-repeat: no-repeat;
+background-position: center;
+</string>
+                                </property>
+                                <property name="text">
+                                 <string/>
+                                </property>
+                               </widget>
+                              </item>
+                              <item>
+                               <widget class="QPushButton" name="language_btn">
+                                <property name="minimumSize">
+                                 <size>
+                                  <width>221</width>
+                                  <height>244</height>
+                                 </size>
+                                </property>
+                                <property name="maximumSize">
+                                 <size>
+                                  <width>221</width>
+                                  <height>244</height>
+                                 </size>
+                                </property>
+                                <property name="styleSheet">
+                                 <string notr="true">background-image: url(:/images/images/images/language.png);
+background-repeat: no-repeat;
+background-position: center;
+</string>
+                                </property>
+                                <property name="text">
+                                 <string/>
+                                </property>
+                               </widget>
+                              </item>
+                              <item>
+                               <widget class="QPushButton" name="birth_btn">
+                                <property name="minimumSize">
+                                 <size>
+                                  <width>221</width>
+                                  <height>244</height>
+                                 </size>
+                                </property>
+                                <property name="maximumSize">
+                                 <size>
+                                  <width>221</width>
+                                  <height>244</height>
+                                 </size>
+                                </property>
+                                <property name="styleSheet">
+                                 <string notr="true">background-image: url(:/images/images/images/birth.png);
+background-repeat: no-repeat;
+background-position: center;</string>
+                                </property>
+                                <property name="text">
+                                 <string/>
+                                </property>
+                               </widget>
+                              </item>
+                             </layout>
+                            </item>
+                           </layout>
+                          </widget>
+                         </item>
+                        </layout>
                        </item>
                       </layout>
                      </widget>
