@@ -71,7 +71,7 @@ class Ui_MainWindow(object):
 "}\n"
 "#topLogo {\n"
 "	background-color: rgb(33, 37, 43);\n"
-"	background-image: url(:/images/images/images/PyDracula.png);\n"
+"	background-image: url(:/images/images/images/ESL_logo_small.png);\n"
 "	background-position: centered;\n"
 "	background-repeat: no-repeat;\n"
 "}\n"
@@ -640,7 +640,6 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_4.addWidget(self.toggleButton)
 
-
         self.verticalMenuLayout.addWidget(self.toggleBox)
 
         self.topMenu = QFrame(self.leftMenuFrame)
@@ -949,9 +948,9 @@ class Ui_MainWindow(object):
         self.settingsTopBtn.setMaximumSize(QSize(28, 28))
         self.settingsTopBtn.setCursor(QCursor(Qt.PointingHandCursor))
         icon1 = QIcon()
-        icon1.addFile(u":/icons/images/icons/icon_settings.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon1.addFile(u":/icons/images/icons/cil-user.png", QSize(), QIcon.Normal, QIcon.Off)
         self.settingsTopBtn.setIcon(icon1)
-        self.settingsTopBtn.setIconSize(QSize(20, 20))
+        self.settingsTopBtn.setIconSize(QSize(25, 20))
 
         self.horizontalLayout_2.addWidget(self.settingsTopBtn)
 
@@ -1480,29 +1479,30 @@ class Ui_MainWindow(object):
         self.verticalLayout_14.setSpacing(0)
         self.verticalLayout_14.setObjectName(u"verticalLayout_14")
         self.verticalLayout_14.setContentsMargins(0, 0, 0, 0)
-        self.btn_message = QPushButton(self.topMenus)
-        self.btn_message.setObjectName(u"btn_message")
-        sizePolicy.setHeightForWidth(self.btn_message.sizePolicy().hasHeightForWidth())
-        self.btn_message.setSizePolicy(sizePolicy)
-        self.btn_message.setMinimumSize(QSize(0, 45))
-        self.btn_message.setFont(font)
-        self.btn_message.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_message.setLayoutDirection(Qt.LeftToRight)
-        self.btn_message.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-envelope-open.png);")
 
-        self.verticalLayout_14.addWidget(self.btn_message)
+        # self.btn_message = QPushButton(self.topMenus)
+        # self.btn_message.setObjectName(u"btn_message")
+        # sizePolicy.setHeightForWidth(self.btn_message.sizePolicy().hasHeightForWidth())
+        # self.btn_message.setSizePolicy(sizePolicy)
+        # self.btn_message.setMinimumSize(QSize(0, 45))
+        # self.btn_message.setFont(font)
+        # self.btn_message.setCursor(QCursor(Qt.PointingHandCursor))
+        # self.btn_message.setLayoutDirection(Qt.LeftToRight)
+        # self.btn_message.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-envelope-open.png);")
+        #
+        # self.verticalLayout_14.addWidget(self.btn_message)
 
-        self.btn_print = QPushButton(self.topMenus)
-        self.btn_print.setObjectName(u"btn_print")
-        sizePolicy.setHeightForWidth(self.btn_print.sizePolicy().hasHeightForWidth())
-        self.btn_print.setSizePolicy(sizePolicy)
-        self.btn_print.setMinimumSize(QSize(0, 45))
-        self.btn_print.setFont(font)
-        self.btn_print.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_print.setLayoutDirection(Qt.LeftToRight)
-        self.btn_print.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-print.png);")
+        # self.btn_print = QPushButton(self.topMenus)
+        # self.btn_print.setObjectName(u"btn_print")
+        # sizePolicy.setHeightForWidth(self.btn_print.sizePolicy().hasHeightForWidth())
+        # self.btn_print.setSizePolicy(sizePolicy)
+        # self.btn_print.setMinimumSize(QSize(0, 45))
+        # self.btn_print.setFont(font)
+        # self.btn_print.setCursor(QCursor(Qt.PointingHandCursor))
+        # self.btn_print.setLayoutDirection(Qt.LeftToRight)
+        # self.btn_print.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-print.png);")
 
-        self.verticalLayout_14.addWidget(self.btn_print)
+        # self.verticalLayout_14.addWidget(self.btn_print)
 
         self.btn_logout = QPushButton(self.topMenus)
         self.btn_logout.setObjectName(u"btn_logout")
@@ -1589,8 +1589,8 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.titleLeftApp.setText(QCoreApplication.translate("MainWindow", u"PyDracula", None))
-        self.titleLeftDescription.setText(QCoreApplication.translate("MainWindow", u"Modern GUI / Flat Style", None))
+        self.titleLeftApp.setText(QCoreApplication.translate("MainWindow", u"ESL", None))
+        self.titleLeftDescription.setText(QCoreApplication.translate("MainWindow", u"Educate Sign Language", None))
         self.toggleButton.setText(QCoreApplication.translate("MainWindow", u"Hide", None))
         self.btn_home.setText(QCoreApplication.translate("MainWindow", u"Home", None))
         self.btn_widgets.setText(QCoreApplication.translate("MainWindow", u"Widgets", None))
@@ -1708,8 +1708,8 @@ class Ui_MainWindow(object):
         self.tableWidget.setSortingEnabled(__sortingEnabled)
 
         self.label.setText(QCoreApplication.translate("MainWindow", u"NEW PAGE TEST", None))
-        self.btn_message.setText(QCoreApplication.translate("MainWindow", u"Message", None))
-        self.btn_print.setText(QCoreApplication.translate("MainWindow", u"Print", None))
+        # self.btn_message.setText(QCoreApplication.translate("MainWindow", u"Message", None))
+        # self.btn_print.setText(QCoreApplication.translate("MainWindow", u"Print", None))
         self.btn_logout.setText(QCoreApplication.translate("MainWindow", u"Logout", None))
         self.creditsLabel.setText(QCoreApplication.translate("MainWindow", u"By: Wanderson M. Pimenta", None))
         self.version.setText(QCoreApplication.translate("MainWindow", u"v1.0.3", None))
