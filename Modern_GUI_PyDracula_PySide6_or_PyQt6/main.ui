@@ -7,7 +7,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1280</width>
+    <width>1188</width>
     <height>720</height>
    </rect>
   </property>
@@ -1895,7 +1895,7 @@ background-repeat: no-repeat;</string>
                            <rect>
                             <x>0</x>
                             <y>0</y>
-                            <width>1178</width>
+                            <width>1086</width>
                             <height>603</height>
                            </rect>
                           </property>
