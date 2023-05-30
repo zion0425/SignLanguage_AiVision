@@ -1,5 +1,7 @@
 <RCC>
   <qresource prefix="images">
+    <file>images/icons/learn.png</file>
+    <file>images/icons/dic.png</file>
     <file>images/images/ESL_logo 1.png</file>
     <file>images/images/age.png</file>
     <file>images/images/birth.png</file>

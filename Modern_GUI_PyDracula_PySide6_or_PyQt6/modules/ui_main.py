@@ -699,17 +699,17 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_8.addWidget(self.btn_save)
 
-        # self.btn_exit = QPushButton(self.topMenu)
-        # self.btn_exit.setObjectName(u"btn_exit")
-        # sizePolicy.setHeightForWidth(self.btn_exit.sizePolicy().hasHeightForWidth())
-        # self.btn_exit.setSizePolicy(sizePolicy)
-        # self.btn_exit.setMinimumSize(QSize(0, 45))
-        # self.btn_exit.setFont(font)
-        # self.btn_exit.setCursor(QCursor(Qt.PointingHandCursor))
-        # self.btn_exit.setLayoutDirection(Qt.LeftToRight)
-        # self.btn_exit.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-x.png);")
-        #
-        # self.verticalLayout_8.addWidget(self.btn_exit)
+        self.btn_exit = QPushButton(self.topMenu)
+        self.btn_exit.setObjectName(u"btn_exit")
+        sizePolicy.setHeightForWidth(self.btn_exit.sizePolicy().hasHeightForWidth())
+        self.btn_exit.setSizePolicy(sizePolicy)
+        self.btn_exit.setMinimumSize(QSize(0, 45))
+        self.btn_exit.setFont(font)
+        self.btn_exit.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_exit.setLayoutDirection(Qt.LeftToRight)
+        self.btn_exit.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-x.png);")
+
+        self.verticalLayout_8.addWidget(self.btn_exit)
 
 
         self.verticalMenuLayout.addWidget(self.topMenu, 0, Qt.AlignTop)
