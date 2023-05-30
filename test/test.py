@@ -6,7 +6,7 @@ from PIL import ImageFont, ImageDraw, Image
 from pathlib import Path
 
 actions = []
-video_file_path = '../videos'
+video_file_path = '../Modern_GUI_PyDracula_PySide6_or_PyQt6/videos'
 for file in Path(video_file_path).iterdir():
     print(file.stem)
     actions.append(file.stem)

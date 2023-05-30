@@ -6,47 +6,16 @@ import cv2
 from PySide6.QtCore import  Slot, QFile
 import numpy as np
 from PySide6.QtUiTools import QUiLoader
-from video_thread import VideoThread
-from web_cam_thread import WebCamThread
+from Modern_GUI_PyDracula_PySide6_or_PyQt6.video_thread import VideoThread
+from Modern_GUI_PyDracula_PySide6_or_PyQt6.web_cam_thread import WebCamThread
 
 class App(QMainWindow):
     def __init__(self):
         super().__init__()
 
-        # load the UI file
-        loader = QUiLoader()
-        file = QFile("ui/prac_sign.ui")
-        file.open(QFile.ReadOnly)
-        self.ui = loader.load(file)
-        file.close()
 
-        self.icon_btn = self.ui.findChild(QPushButton, 'icon_btn')
-        self.user_icon_btn = self.ui.findChild(QPushButton, 'user_icon_btn')
-        self.sign_video = self.ui.findChild(QLabel, 'sign_video')
-        self.webcam = self.ui.findChild(QLabel, 'webcam')
 
-        self.icon_btn.setStyleSheet('border-image: url(ui/img/ESL_logo_small2.png);')
-        self.user_icon_btn.setStyleSheet('border-image: url(ui/img/user3.png);')
 
-        self.setWindowTitle("권투 학습하기")
-
-        # create the video capture thread
-        self.vid_thread = VideoThread()
-        # connect its signal to the update_vid_image slot
-        self.vid_thread.change_pixmap_signal.connect(self.update_vid_image)
-        # start the thread
-        self.vid_thread.start()
-
-        self.webcam_thread = WebCamThread()
-        self.webcam_thread.change_pixmap_signal.connect(self.update_webcam_image)
-        self.webcam_thread.start()
-
-        self.setCentralWidget(self.ui)
-        self.show()
-
-        # Adjust QLabel sizes
-        self.sign_video.setScaledContents(True)
-        self.webcam.setScaledContents(True)
     def closeEvent(self, event):
         self.vid_thread.stop()
         self.webcam_thread.stop()

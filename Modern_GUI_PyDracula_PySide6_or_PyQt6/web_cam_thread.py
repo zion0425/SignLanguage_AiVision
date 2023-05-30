@@ -7,10 +7,11 @@ import cv2
 import time
 
 
+#2차원 배열로 key : vdiName , value : vdiUrl
 actions = ['일본어', '솔직하다', '오빠', '할아버지', '어른', '물놀이', '고리타분', '마라톤', '테니스', '영어', '조용하다', '수영', '특기', '형', '낚시', '똑똑하다', '수다스럽다', '노인', '청소년', '할머니', '청년', '계획적', '귀엽다', '야구', '친부', '독특', '친모', '긍정적', '누나', '한국인', '엉뚱', '없다', '권투', '여동생', '노래', '한국어']
 
 seq_length = 30
-model = load_model(r"models/fourth_model.h5")
+model = load_model("/Users/sion/Desktop/University/test/models/fourth_model.h5")
 # MediaPipe hands model
 mp_hands = mp.solutions.hands
 mp_drawing = mp.solutions.drawing_utils
@@ -20,7 +21,7 @@ hands = mp_hands.Hands(
     min_tracking_confidence=0.5)
 
 #한글 폰트 경로 지정
-fontpath = "/usr/local/share/fonts/NanumFont/NanumGothicBold.ttf"
+fontpath = "/Library/Fonts/NanumGothic.ttf"
 # fontpath = "AppleGothic.ttf"
 font = ImageFont.truetype(fontpath,40, encoding='unic')
 
