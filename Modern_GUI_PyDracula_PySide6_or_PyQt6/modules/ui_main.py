@@ -670,7 +670,7 @@ class Ui_MainWindow(object):
         self.btn_widgets.setFont(font)
         self.btn_widgets.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_widgets.setLayoutDirection(Qt.LeftToRight)
-        self.btn_widgets.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-gamepad.png);")
+        self.btn_widgets.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-notes.png);")
 
         self.verticalLayout_8.addWidget(self.btn_widgets)
 
@@ -698,17 +698,17 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_8.addWidget(self.btn_save)
 
-        self.btn_exit = QPushButton(self.topMenu)
-        self.btn_exit.setObjectName(u"btn_exit")
-        sizePolicy.setHeightForWidth(self.btn_exit.sizePolicy().hasHeightForWidth())
-        self.btn_exit.setSizePolicy(sizePolicy)
-        self.btn_exit.setMinimumSize(QSize(0, 45))
-        self.btn_exit.setFont(font)
-        self.btn_exit.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_exit.setLayoutDirection(Qt.LeftToRight)
-        self.btn_exit.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-x.png);")
-
-        self.verticalLayout_8.addWidget(self.btn_exit)
+        # self.btn_exit = QPushButton(self.topMenu)
+        # self.btn_exit.setObjectName(u"btn_exit")
+        # sizePolicy.setHeightForWidth(self.btn_exit.sizePolicy().hasHeightForWidth())
+        # self.btn_exit.setSizePolicy(sizePolicy)
+        # self.btn_exit.setMinimumSize(QSize(0, 45))
+        # self.btn_exit.setFont(font)
+        # self.btn_exit.setCursor(QCursor(Qt.PointingHandCursor))
+        # self.btn_exit.setLayoutDirection(Qt.LeftToRight)
+        # self.btn_exit.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-x.png);")
+        #
+        # self.verticalLayout_8.addWidget(self.btn_exit)
 
 
         self.verticalMenuLayout.addWidget(self.topMenu, 0, Qt.AlignTop)
@@ -1591,12 +1591,12 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
         self.titleLeftApp.setText(QCoreApplication.translate("MainWindow", u"ESL", None))
         self.titleLeftDescription.setText(QCoreApplication.translate("MainWindow", u"Educate Sign Language", None))
-        self.toggleButton.setText(QCoreApplication.translate("MainWindow", u"Hide", None))
-        self.btn_home.setText(QCoreApplication.translate("MainWindow", u"Home", None))
-        self.btn_widgets.setText(QCoreApplication.translate("MainWindow", u"Widgets", None))
-        self.btn_new.setText(QCoreApplication.translate("MainWindow", u"New", None))
-        self.btn_save.setText(QCoreApplication.translate("MainWindow", u"Save", None))
-        self.btn_exit.setText(QCoreApplication.translate("MainWindow", u"Exit", None))
+        self.toggleButton.setText(QCoreApplication.translate("MainWindow", u"", None))
+        self.btn_home.setText(QCoreApplication.translate("MainWindow", u"메인화면", None))
+        self.btn_widgets.setText(QCoreApplication.translate("MainWindow", u"수어학습", None))
+        self.btn_new.setText(QCoreApplication.translate("MainWindow", u"단어장", None))
+        self.btn_save.setText(QCoreApplication.translate("MainWindow", u"수어사전", None))
+        # self.btn_exit.setText(QCoreApplication.translate("MainWindow", u"Exit", None))
         self.toggleLeftBox.setText(QCoreApplication.translate("MainWindow", u"Left Box", None))
         self.extraLabel.setText(QCoreApplication.translate("MainWindow", u"Left Box", None))
 #if QT_CONFIG(tooltip)
@@ -1711,7 +1711,7 @@ class Ui_MainWindow(object):
         # self.btn_message.setText(QCoreApplication.translate("MainWindow", u"Message", None))
         # self.btn_print.setText(QCoreApplication.translate("MainWindow", u"Print", None))
         self.btn_logout.setText(QCoreApplication.translate("MainWindow", u"Logout", None))
-        self.creditsLabel.setText(QCoreApplication.translate("MainWindow", u"By: Wanderson M. Pimenta", None))
+        self.creditsLabel.setText(QCoreApplication.translate("MainWindow", u"By: 캡스톤디자인 1조, ESL", None))
         self.version.setText(QCoreApplication.translate("MainWindow", u"v1.0.3", None))
     # retranslateUi
 
