@@ -1,12 +1,12 @@
-<!DOCTYPE RCC [
-        <!ELEMENT RCC (qresource)*>
-        <!ELEMENT qresource (file)*>
-        <!ATTLIST qresource
-                prefix CDATA #REQUIRED>
-        <!ELEMENT file (#PCDATA)>
-        ]>
 <RCC>
   <qresource prefix="images">
+    <file>images/images/ESL_logo 1.png</file>
+    <file>images/images/age.png</file>
+    <file>images/images/birth.png</file>
+    <file>images/images/character.png</file>
+    <file>images/images/family.png</file>
+    <file>images/images/hobby.png</file>
+    <file>images/images/language.png</file>
     <file>images/images/PyDracula.png</file>
     <file>images/images/PyDracula_vertical.png</file>
     <file>images/images/ESL_logo_small.png</file>
