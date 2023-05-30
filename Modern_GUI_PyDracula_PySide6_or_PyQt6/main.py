@@ -84,7 +84,7 @@ class MainWindow(QMainWindow):
 
     def startVideo(self):
         if not (self.vid_thread.isRunning() and self.webcam_thread.isRunning()):
-            self.initVideoWebcam(self.videoName, widgets.sign_video, widgets.webcam)
+            self.initVideoWebcam(self.videoName, widgets.vid_label, widgets.webcam_label)
         self.vid_thread.start()
         self.webcam_thread.start()
 
@@ -108,7 +108,7 @@ class MainWindow(QMainWindow):
         widgets = self.ui
 
         #   비디오 캠 세팅 #############################
-        self.initVideoWebcam('권투', widgets.sign_video, widgets.webcam)
+        self.initVideoWebcam('권투', widgets.vid_label, widgets.webcam_label)
         #   비디오 캠 리로딩 #############################
         # self.relodingVideoCam('권투', widgets.sign_video, widgets.webcam)
         #   비디오 캠 시작 ################################
