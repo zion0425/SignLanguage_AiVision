@@ -15,7 +15,7 @@ seq_length = 30
 
 current_dir = os.path.abspath(os.path.dirname(__file__))
 
-model = load_model(current_dir+"/../models/fourth_model.h5")
+model = load_model(current_dir+"/models/fourth_model.h5")
 # MediaPipe hands model
 mp_hands = mp.solutions.hands
 mp_drawing = mp.solutions.drawing_utils

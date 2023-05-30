@@ -243,6 +243,6 @@ class MainWindow(QMainWindow):
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    app.setWindowIcon(QIcon("ESL_logo_small2.ico"))
+    app.setWindowIcon(QIcon("images/images/ESL_logo_small2.ico"))
     window = MainWindow()
     sys.exit(app.exec())

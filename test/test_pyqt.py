@@ -18,7 +18,7 @@ video_file_path = '../Modern_GUI_PyDracula_PySide6_or_PyQt6/videos'
 print(actions)
 seq_length = 30
 
-model = load_model('../models/fourth_model.h5')
+model = load_model('../Modern_GUI_PyDracula_PySide6_or_PyQt6/models/fourth_model.h5')
 # MediaPipe hands model
 mp_hands = mp.solutions.hands
 mp_drawing = mp.solutions.drawing_utils
