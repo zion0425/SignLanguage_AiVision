@@ -151,6 +151,14 @@ class MainWindow(QMainWindow):
         widgets.btn_new.clicked.connect(self.buttonClick)
         widgets.btn_save.clicked.connect(self.buttonClick)
 
+        # Main Contents
+        widgets.hobby_btn.clicked.connect(self.buttonClick)
+        widgets.character_btn.clicked.connect(self.buttonClick)
+        widgets.family_btn.clicked.connect(self.buttonClick)
+        widgets.age_btn.clicked.connect(self.buttonClick)
+        widgets.language_btn.clicked.connect(self.buttonClick)
+        widgets.birth_btn.clicked.connect(self.buttonClick)
+
         # EXTRA LEFT BOX
         def openCloseLeftBox():
             UIFunctions.toggleLeftBox(self, True)
@@ -212,16 +220,47 @@ class MainWindow(QMainWindow):
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet())) # SELECT MENU
 
         if btnName == "btn_save":
-            # widgets.stackedWidget.setCurrentWidget(widgets.learning_page)  # SET PAGE
-            # UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
-            # btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))  # SELECT MENU
-            # self.startVideo()
-
             widgets.stackedWidget.setCurrentWidget(widgets.choose_course)  # SET PAGE
             UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))  # SELECT MENU
             # self.startVideo()
             print("Save BTN clicked!")
+
+        if btnName == "hobby_btn":
+            widgets.stackedWidget.setCurrentWidget(widgets.learning_page)  # SET PAGE
+            UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
+            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))  # SELECT MENU
+            self.startVideo()
+
+        if btnName == "character_btn":
+            widgets.stackedWidget.setCurrentWidget(widgets.learning_page)  # SET PAGE
+            UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
+            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))  # SELECT MENU
+            self.startVideo()
+
+        if btnName == "family_btn":
+            widgets.stackedWidget.setCurrentWidget(widgets.learning_page)  # SET PAGE
+            UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
+            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))  # SELECT MENU
+            self.startVideo()
+
+        if btnName == "age_btn":
+            widgets.stackedWidget.setCurrentWidget(widgets.learning_page)  # SET PAGE
+            UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
+            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))  # SELECT MENU
+            self.startVideo()
+
+        if btnName == "language_btn":
+            widgets.stackedWidget.setCurrentWidget(widgets.learning_page)  # SET PAGE
+            UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
+            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))  # SELECT MENU
+            self.startVideo()
+
+        if btnName == "birth_btn":
+            widgets.stackedWidget.setCurrentWidget(widgets.learning_page)  # SET PAGE
+            UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
+            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))  # SELECT MENU
+            self.startVideo()
 
         # PRINT BTN NAME
         print(f'Button "{btnName}" pressed!')
