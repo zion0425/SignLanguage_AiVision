@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainwKWJlH.ui'
+## Form generated from reading UI file 'mainXQNkuK.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -18,7 +18,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1280, 720)
+        MainWindow.resize(1188, 720)
         MainWindow.setMinimumSize(QSize(940, 560))
         self.styleSheet = QWidget(MainWindow)
         self.styleSheet.setObjectName(u"styleSheet")
@@ -1045,7 +1045,7 @@ class Ui_MainWindow(object):
         self.scrollArea_2.setWidgetResizable(True)
         self.learning_container = QWidget()
         self.learning_container.setObjectName(u"learning_container")
-        self.learning_container.setGeometry(QRect(0, 0, 1178, 603))
+        self.learning_container.setGeometry(QRect(0, 0, 1086, 603))
         self.verticalLayout_23 = QVBoxLayout(self.learning_container)
         self.verticalLayout_23.setSpacing(0)
         self.verticalLayout_23.setObjectName(u"verticalLayout_23")
@@ -1228,7 +1228,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 218, 218))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 317, 218))
         self.scrollAreaWidgetContents.setStyleSheet(u" QScrollBar:vertical {\n"
 "	border: none;\n"
 "    background: rgb(52, 59, 72);\n"
@@ -1440,6 +1440,119 @@ class Ui_MainWindow(object):
         self.verticalLayout_20.addWidget(self.label)
 
         self.stackedWidget.addWidget(self.new_page)
+        self.choose_course = QWidget()
+        self.choose_course.setObjectName(u"choose_course")
+        self.verticalLayout_24 = QVBoxLayout(self.choose_course)
+        self.verticalLayout_24.setObjectName(u"verticalLayout_24")
+        self.verticalLayout_22 = QVBoxLayout()
+        self.verticalLayout_22.setObjectName(u"verticalLayout_22")
+        self.label_2 = QLabel(self.choose_course)
+        self.label_2.setObjectName(u"label_2")
+        font5 = QFont()
+        font5.setFamily(u"Segoe UI")
+        font5.setBold(False)
+        font5.setItalic(False)
+        self.label_2.setFont(font5)
+        self.label_2.setStyleSheet(u"font-size: 38px;")
+        self.label_2.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_22.addWidget(self.label_2)
+
+        self.frame_4 = QFrame(self.choose_course)
+        self.frame_4.setObjectName(u"frame_4")
+        self.frame_4.setFrameShape(QFrame.StyledPanel)
+        self.frame_4.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_25 = QVBoxLayout(self.frame_4)
+        self.verticalLayout_25.setObjectName(u"verticalLayout_25")
+        self.horizontalLayout_7 = QHBoxLayout()
+        self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
+        self.hobby_btn = QPushButton(self.frame_4)
+        self.hobby_btn.setObjectName(u"hobby_btn")
+        self.hobby_btn.setMinimumSize(QSize(221, 244))
+        self.hobby_btn.setMaximumSize(QSize(221, 244))
+        self.hobby_btn.setStyleSheet(u"background-image: url(:/images/images/images/hobby.png);\n"
+"")
+
+        self.horizontalLayout_7.addWidget(self.hobby_btn)
+
+        self.character_btn = QPushButton(self.frame_4)
+        self.character_btn.setObjectName(u"character_btn")
+        self.character_btn.setMinimumSize(QSize(221, 244))
+        self.character_btn.setMaximumSize(QSize(221, 244))
+        self.character_btn.setStyleSheet(u"background-image: url(:/images/images/images/character.png);\n"
+"background-repeat: no-repeat;\n"
+"background-position: center;\n"
+"")
+
+        self.horizontalLayout_7.addWidget(self.character_btn)
+
+        self.family_btn = QPushButton(self.frame_4)
+        self.family_btn.setObjectName(u"family_btn")
+        self.family_btn.setMinimumSize(QSize(221, 244))
+        self.family_btn.setMaximumSize(QSize(221, 244))
+        self.family_btn.setStyleSheet(u"background-image: url(:/images/images/images/family.png);\n"
+"background-repeat: no-repeat;\n"
+"background-position: center;\n"
+"")
+
+        self.horizontalLayout_7.addWidget(self.family_btn)
+
+
+        self.verticalLayout_25.addLayout(self.horizontalLayout_7)
+
+
+        self.verticalLayout_22.addWidget(self.frame_4)
+
+        self.frame_3 = QFrame(self.choose_course)
+        self.frame_3.setObjectName(u"frame_3")
+        self.frame_3.setFrameShape(QFrame.StyledPanel)
+        self.frame_3.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_26 = QVBoxLayout(self.frame_3)
+        self.verticalLayout_26.setObjectName(u"verticalLayout_26")
+        self.horizontalLayout_8 = QHBoxLayout()
+        self.horizontalLayout_8.setObjectName(u"horizontalLayout_8")
+        self.age_btn = QPushButton(self.frame_3)
+        self.age_btn.setObjectName(u"age_btn")
+        self.age_btn.setMinimumSize(QSize(221, 244))
+        self.age_btn.setMaximumSize(QSize(221, 244))
+        self.age_btn.setStyleSheet(u"background-image: url(:/images/images/images/age.png);\n"
+"background-repeat: no-repeat;\n"
+"background-position: center;\n"
+"")
+
+        self.horizontalLayout_8.addWidget(self.age_btn)
+
+        self.language_btn = QPushButton(self.frame_3)
+        self.language_btn.setObjectName(u"language_btn")
+        self.language_btn.setMinimumSize(QSize(221, 244))
+        self.language_btn.setMaximumSize(QSize(221, 244))
+        self.language_btn.setStyleSheet(u"background-image: url(:/images/images/images/language.png);\n"
+"background-repeat: no-repeat;\n"
+"background-position: center;\n"
+"")
+
+        self.horizontalLayout_8.addWidget(self.language_btn)
+
+        self.birth_btn = QPushButton(self.frame_3)
+        self.birth_btn.setObjectName(u"birth_btn")
+        self.birth_btn.setMinimumSize(QSize(221, 244))
+        self.birth_btn.setMaximumSize(QSize(221, 244))
+        self.birth_btn.setStyleSheet(u"background-image: url(:/images/images/images/birth.png);\n"
+"background-repeat: no-repeat;\n"
+"background-position: center;")
+
+        self.horizontalLayout_8.addWidget(self.birth_btn)
+
+
+        self.verticalLayout_26.addLayout(self.horizontalLayout_8)
+
+
+        self.verticalLayout_22.addWidget(self.frame_3)
+
+
+        self.verticalLayout_24.addLayout(self.verticalLayout_22)
+
+        self.stackedWidget.addWidget(self.choose_course)
 
         self.verticalLayout_15.addWidget(self.stackedWidget)
 
@@ -1541,10 +1654,6 @@ class Ui_MainWindow(object):
         self.creditsLabel = QLabel(self.bottomBar)
         self.creditsLabel.setObjectName(u"creditsLabel")
         self.creditsLabel.setMaximumSize(QSize(16777215, 16))
-        font5 = QFont()
-        font5.setFamily(u"Segoe UI")
-        font5.setBold(False)
-        font5.setItalic(False)
         self.creditsLabel.setFont(font5)
         self.creditsLabel.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
 
@@ -1581,7 +1690,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(1)
+        self.stackedWidget.setCurrentIndex(4)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -1708,6 +1817,13 @@ class Ui_MainWindow(object):
         self.tableWidget.setSortingEnabled(__sortingEnabled)
 
         self.label.setText(QCoreApplication.translate("MainWindow", u"NEW PAGE TEST", None))
+        self.label_2.setText(QCoreApplication.translate("MainWindow", u"\ud559\uc2b5\uacfc\uc815", None))
+        self.hobby_btn.setText("")
+        self.character_btn.setText("")
+        self.family_btn.setText("")
+        self.age_btn.setText("")
+        self.language_btn.setText("")
+        self.birth_btn.setText("")
         self.btn_message.setText(QCoreApplication.translate("MainWindow", u"Message", None))
         self.btn_print.setText(QCoreApplication.translate("MainWindow", u"Print", None))
         self.btn_logout.setText(QCoreApplication.translate("MainWindow", u"Logout", None))

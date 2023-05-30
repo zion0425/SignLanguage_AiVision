@@ -212,10 +212,15 @@ class MainWindow(QMainWindow):
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet())) # SELECT MENU
 
         if btnName == "btn_save":
-            widgets.stackedWidget.setCurrentWidget(widgets.learning_page)  # SET PAGE
+            # widgets.stackedWidget.setCurrentWidget(widgets.learning_page)  # SET PAGE
+            # UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
+            # btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))  # SELECT MENU
+            # self.startVideo()
+
+            widgets.stackedWidget.setCurrentWidget(widgets.choose_course)  # SET PAGE
             UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))  # SELECT MENU
-            self.startVideo()
+            # self.startVideo()
             print("Save BTN clicked!")
 
         # PRINT BTN NAME
