@@ -147,9 +147,11 @@ class MainWindow(QMainWindow):
 
         # LEFT MENUS
         widgets.btn_home.clicked.connect(self.buttonClick)
-        widgets.btn_widgets.clicked.connect(self.buttonClick)
-        widgets.btn_new.clicked.connect(self.buttonClick)
-        widgets.btn_save.clicked.connect(self.buttonClick)
+        widgets.btn_learn.clicked.connect(self.buttonClick)
+        widgets.btn_quiz.clicked.connect(self.buttonClick)
+        widgets.btn_wordList.clicked.connect(self.buttonClick)
+        widgets.btn_dictionary.clicked.connect(self.buttonClick)
+
 
         # Main Contents
         widgets.hobby_btn.clicked.connect(self.buttonClick)
@@ -198,7 +200,7 @@ class MainWindow(QMainWindow):
         btn = self.sender()
         btnName = btn.objectName()
 
-        if not btnName == "btn_save":
+        if not btnName == "btn_learn":
             self.stopVideo()
 
         # SHOW HOME PAGE
@@ -208,23 +210,30 @@ class MainWindow(QMainWindow):
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
 
         # SHOW WIDGETS PAGE
-        if btnName == "btn_widgets":
-            widgets.stackedWidget.setCurrentWidget(widgets.widgets)
+        if btnName == "btn_learn":
+            widgets.stackedWidget.setCurrentWidget(widgets.wordList)
             UIFunctions.resetStyle(self, btnName)
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
 
         # SHOW NEW PAGE
-        if btnName == "btn_new":
-            widgets.stackedWidget.setCurrentWidget(widgets.new_page) # SET PAGE
+        if btnName == "btn_quiz":
+            widgets.stackedWidget.setCurrentWidget(widgets.quiz) # SET PAGE
             UIFunctions.resetStyle(self, btnName) # RESET ANOTHERS BUTTONS SELECTED
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet())) # SELECT MENU
 
-        if btnName == "btn_save":
-            widgets.stackedWidget.setCurrentWidget(widgets.choose_course)  # SET PAGE
+        if btnName == "btn_wordList":
+            widgets.stackedWidget.setCurrentWidget(widgets.learn)  # SET PAGE
             UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))  # SELECT MENU
             # self.startVideo()
             print("Save BTN clicked!")
+
+        # if btnName == "btn_dictionary":
+        #     widgets.stackedWidget.setCurrentWidget(widgets.choose_course)  # SET PAGE
+        #     UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
+        #     btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))  # SELECT MENU
+        #     # self.startVideo()
+        #     print("Save BTN clicked!")
 
         if btnName == "hobby_btn":
             widgets.stackedWidget.setCurrentWidget(widgets.learning_page)  # SET PAGE
