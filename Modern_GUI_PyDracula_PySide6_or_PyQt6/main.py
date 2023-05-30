@@ -211,7 +211,7 @@ class MainWindow(QMainWindow):
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
 
         if btnName == "pushButton":
-            widgets.stackedWidget.setCurrentWidget(widgets.choose_course)
+            widgets.stackedWidget.setCurrentWidget(widgets.wordList)
             UIFunctions.resetStyle(self, btnName)
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
 
