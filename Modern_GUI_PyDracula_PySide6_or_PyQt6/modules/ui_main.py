@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainYCZHBS.ui'
+## Form generated from reading UI file 'mainiLjfkZ.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -671,7 +671,7 @@ class Ui_MainWindow(object):
         self.btn_widgets.setFont(font)
         self.btn_widgets.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_widgets.setLayoutDirection(Qt.LeftToRight)
-        self.btn_widgets.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-notes.png);")
+        self.btn_widgets.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-gamepad.png);")
 
         self.verticalLayout_8.addWidget(self.btn_widgets)
 
@@ -1032,9 +1032,17 @@ class Ui_MainWindow(object):
         self.stackedWidget.setStyleSheet(u"background: transparent;")
         self.home = QWidget()
         self.home.setObjectName(u"home")
-        self.home.setStyleSheet(u"background-image: url(:/images/images/images/PyDracula_vertical.png);\n"
+        self.home.setStyleSheet(u"")
+        self.main_logo = QLabel(self.home)
+        self.main_logo.setObjectName(u"main_logo")
+        self.main_logo.setGeometry(QRect(230, 30, 631, 401))
+        self.main_logo.setStyleSheet(u"background-image: url(:/images/images/images/esl_big.png);\n"
 "background-position: center;\n"
 "background-repeat: no-repeat;")
+        self.pushButton = QPushButton(self.home)
+        self.pushButton.setObjectName(u"pushButton")
+        self.pushButton.setGeometry(QRect(310, 470, 501, 101))
+        self.pushButton.setStyleSheet(u"font-size: 32px;")
         self.stackedWidget.addWidget(self.home)
         self.learning_page = QWidget()
         self.learning_page.setObjectName(u"learning_page")
@@ -1496,13 +1504,13 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.titleLeftApp.setText(QCoreApplication.translate("MainWindow", u"ESL", None))
-        self.titleLeftDescription.setText(QCoreApplication.translate("MainWindow", u"Educate Sign Language", None))
-        self.toggleButton.setText(QCoreApplication.translate("MainWindow", u"", None))
-        self.btn_home.setText(QCoreApplication.translate("MainWindow", u"메인화면", None))
-        self.btn_widgets.setText(QCoreApplication.translate("MainWindow", u"수어학습", None))
-        self.btn_new.setText(QCoreApplication.translate("MainWindow", u"단어장", None))
-        self.btn_save.setText(QCoreApplication.translate("MainWindow", u"수어사전", None))
+        self.titleLeftApp.setText(QCoreApplication.translate("MainWindow", u"PyDracula", None))
+        self.titleLeftDescription.setText(QCoreApplication.translate("MainWindow", u"Modern GUI / Flat Style", None))
+        self.toggleButton.setText(QCoreApplication.translate("MainWindow", u"Hide", None))
+        self.btn_home.setText(QCoreApplication.translate("MainWindow", u"Home", None))
+        self.btn_widgets.setText(QCoreApplication.translate("MainWindow", u"Widgets", None))
+        self.btn_new.setText(QCoreApplication.translate("MainWindow", u"New", None))
+        self.btn_save.setText(QCoreApplication.translate("MainWindow", u"Save", None))
         self.btn_exit.setText(QCoreApplication.translate("MainWindow", u"Exit", None))
         self.toggleLeftBox.setText(QCoreApplication.translate("MainWindow", u"Left Box", None))
         self.extraLabel.setText(QCoreApplication.translate("MainWindow", u"Left Box", None))
@@ -1544,6 +1552,8 @@ class Ui_MainWindow(object):
         self.closeAppBtn.setToolTip(QCoreApplication.translate("MainWindow", u"Close", None))
 #endif // QT_CONFIG(tooltip)
         self.closeAppBtn.setText("")
+        self.main_logo.setText("")
+        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"\uc218\uc5b4\ud559\uc2b5\ud558\uae30", None))
         self.about_video.setText(QCoreApplication.translate("MainWindow", u"TextLabel about video", None))
         self.about_webcam.setText(QCoreApplication.translate("MainWindow", u"TextLabel about webcam", None))
         self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"Continue", None))
@@ -1614,7 +1624,7 @@ class Ui_MainWindow(object):
         self.btn_message.setText(QCoreApplication.translate("MainWindow", u"Message", None))
         self.btn_print.setText(QCoreApplication.translate("MainWindow", u"Print", None))
         self.btn_logout.setText(QCoreApplication.translate("MainWindow", u"Logout", None))
-        self.creditsLabel.setText(QCoreApplication.translate("MainWindow", u"By: 캡스톤디자인 1조, ESL", None))
+        self.creditsLabel.setText(QCoreApplication.translate("MainWindow", u"By: Wanderson M. Pimenta", None))
         self.version.setText(QCoreApplication.translate("MainWindow", u"v1.0.3", None))
     # retranslateUi
 
