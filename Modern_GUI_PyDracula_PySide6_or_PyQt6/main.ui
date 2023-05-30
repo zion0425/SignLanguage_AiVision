@@ -1878,10 +1878,42 @@ p, li { white-space: pre-wrap; }
                      </property>
                      <widget class="QWidget" name="home">
                       <property name="styleSheet">
-                       <string notr="true">background-image: url(:/images/images/images/PyDracula_vertical.png);
+                       <string notr="true"/>
+                      </property>
+                      <widget class="QLabel" name="main_logo">
+                       <property name="geometry">
+                        <rect>
+                         <x>230</x>
+                         <y>30</y>
+                         <width>631</width>
+                         <height>401</height>
+                        </rect>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">background-image: url(:/images/images/images/esl_big.png);
 background-position: center;
 background-repeat: no-repeat;</string>
-                      </property>
+                       </property>
+                       <property name="text">
+                        <string/>
+                       </property>
+                      </widget>
+                      <widget class="QPushButton" name="pushButton">
+                       <property name="geometry">
+                        <rect>
+                         <x>310</x>
+                         <y>470</y>
+                         <width>501</width>
+                         <height>51</height>
+                        </rect>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">font-size: 42px;</string>
+                       </property>
+                       <property name="text">
+                        <string>수어학습하기</string>
+                       </property>
+                      </widget>
                      </widget>
                      <widget class="QWidget" name="learning_page">
                       <layout class="QVBoxLayout" name="verticalLayout_21">

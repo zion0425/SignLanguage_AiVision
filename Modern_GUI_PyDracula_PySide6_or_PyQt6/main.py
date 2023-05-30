@@ -160,6 +160,7 @@ class MainWindow(QMainWindow):
         widgets.age_btn.clicked.connect(self.buttonClick)
         widgets.language_btn.clicked.connect(self.buttonClick)
         widgets.birth_btn.clicked.connect(self.buttonClick)
+        widgets.pushButton.clicked.connect(self.buttonClick)
 
         # EXTRA LEFT BOX
         def openCloseLeftBox():
@@ -206,6 +207,11 @@ class MainWindow(QMainWindow):
         # SHOW HOME PAGE
         if btnName == "btn_home":
             widgets.stackedWidget.setCurrentWidget(widgets.home)
+            UIFunctions.resetStyle(self, btnName)
+            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
+
+        if btnName == "pushButton":
+            widgets.stackedWidget.setCurrentWidget(widgets.choose_course)
             UIFunctions.resetStyle(self, btnName)
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
 
