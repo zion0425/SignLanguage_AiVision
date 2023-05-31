@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainiLjfkZ.ui'
+## Form generated from reading UI file 'mainVjIhTQ.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -659,7 +659,7 @@ class Ui_MainWindow(object):
         self.btn_home.setFont(font)
         self.btn_home.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_home.setLayoutDirection(Qt.LeftToRight)
-        self.btn_home.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-home.png);")
+        self.btn_home.setStyleSheet(u"background-image: url(:/images/images/icons/Home.png);")
 
         self.verticalLayout_8.addWidget(self.btn_home)
 
@@ -683,7 +683,7 @@ class Ui_MainWindow(object):
         self.btn_quiz.setFont(font)
         self.btn_quiz.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_quiz.setLayoutDirection(Qt.LeftToRight)
-        self.btn_quiz.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-gamepad.png);")
+        self.btn_quiz.setStyleSheet(u"background-image: url(:/images/images/icons/quiz.png);")
 
         self.verticalLayout_8.addWidget(self.btn_quiz)
 
@@ -695,7 +695,7 @@ class Ui_MainWindow(object):
         self.btn_wordList.setFont(font)
         self.btn_wordList.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_wordList.setLayoutDirection(Qt.LeftToRight)
-        self.btn_wordList.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-notes.png)")
+        self.btn_wordList.setStyleSheet(u"background-image: url(:/images/images/icons/Book_open.png);")
 
         self.verticalLayout_8.addWidget(self.btn_wordList)
 
@@ -707,7 +707,7 @@ class Ui_MainWindow(object):
         self.btn_dictionary.setFont(font)
         self.btn_dictionary.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_dictionary.setLayoutDirection(Qt.LeftToRight)
-        self.btn_dictionary.setStyleSheet(u"background-image: url(:/images/images/icons/dic.png);")
+        self.btn_dictionary.setStyleSheet(u"background-image: url(:/images/images/icons/dict.png);")
 
         self.verticalLayout_8.addWidget(self.btn_dictionary)
 
@@ -817,42 +817,6 @@ class Ui_MainWindow(object):
         self.verticalLayout_11.setSpacing(0)
         self.verticalLayout_11.setObjectName(u"verticalLayout_11")
         self.verticalLayout_11.setContentsMargins(0, 0, 0, 0)
-        self.btn_share = QPushButton(self.extraTopMenu)
-        self.btn_share.setObjectName(u"btn_share")
-        sizePolicy.setHeightForWidth(self.btn_share.sizePolicy().hasHeightForWidth())
-        self.btn_share.setSizePolicy(sizePolicy)
-        self.btn_share.setMinimumSize(QSize(0, 45))
-        self.btn_share.setFont(font)
-        self.btn_share.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_share.setLayoutDirection(Qt.LeftToRight)
-        self.btn_share.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-share-boxed.png);")
-
-        self.verticalLayout_11.addWidget(self.btn_share)
-
-        self.btn_adjustments = QPushButton(self.extraTopMenu)
-        self.btn_adjustments.setObjectName(u"btn_adjustments")
-        sizePolicy.setHeightForWidth(self.btn_adjustments.sizePolicy().hasHeightForWidth())
-        self.btn_adjustments.setSizePolicy(sizePolicy)
-        self.btn_adjustments.setMinimumSize(QSize(0, 45))
-        self.btn_adjustments.setFont(font)
-        self.btn_adjustments.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_adjustments.setLayoutDirection(Qt.LeftToRight)
-        self.btn_adjustments.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-equalizer.png);")
-
-        self.verticalLayout_11.addWidget(self.btn_adjustments)
-
-        self.btn_more = QPushButton(self.extraTopMenu)
-        self.btn_more.setObjectName(u"btn_more")
-        sizePolicy.setHeightForWidth(self.btn_more.sizePolicy().hasHeightForWidth())
-        self.btn_more.setSizePolicy(sizePolicy)
-        self.btn_more.setMinimumSize(QSize(0, 45))
-        self.btn_more.setFont(font)
-        self.btn_more.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_more.setLayoutDirection(Qt.LeftToRight)
-        self.btn_more.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-layers.png);")
-
-        self.verticalLayout_11.addWidget(self.btn_more)
-
 
         self.verticalLayout_12.addWidget(self.extraTopMenu, 0, Qt.AlignTop)
 
@@ -1041,8 +1005,8 @@ class Ui_MainWindow(object):
 "background-repeat: no-repeat;")
         self.pushButton = QPushButton(self.home)
         self.pushButton.setObjectName(u"pushButton")
-        self.pushButton.setGeometry(QRect(310, 470, 501, 101))
-        self.pushButton.setStyleSheet(u"font-size: 32px;")
+        self.pushButton.setGeometry(QRect(310, 470, 501, 51))
+        self.pushButton.setStyleSheet(u"font-size: 42px;")
         self.stackedWidget.addWidget(self.home)
         self.learning_page = QWidget()
         self.learning_page.setObjectName(u"learning_page")
@@ -1098,14 +1062,14 @@ class Ui_MainWindow(object):
         self.verticalLayout_21.addWidget(self.scrollArea_2)
 
         self.stackedWidget.addWidget(self.learning_page)
-        self.learn = QWidget()
-        self.learn.setObjectName(u"learn")
-        self.learn.setStyleSheet(u"b")
-        self.verticalLayout = QVBoxLayout(self.learn)
+        self.dic = QWidget()
+        self.dic.setObjectName(u"dic")
+        self.dic.setStyleSheet(u"b")
+        self.verticalLayout = QVBoxLayout(self.dic)
         self.verticalLayout.setSpacing(10)
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.verticalLayout.setContentsMargins(10, 10, 10, 10)
-        self.row_3 = QFrame(self.learn)
+        self.row_3 = QFrame(self.dic)
         self.row_3.setObjectName(u"row_3")
         self.row_3.setMinimumSize(QSize(0, 150))
         self.row_3.setFrameShape(QFrame.StyledPanel)
@@ -1177,7 +1141,6 @@ class Ui_MainWindow(object):
         sizePolicy3.setHeightForWidth(self.tableWidget.sizePolicy().hasHeightForWidth())
         self.tableWidget.setSizePolicy(sizePolicy3)
         palette = QPalette()
-
         brush = QBrush(QColor(221, 221, 221, 255))
         brush.setStyle(Qt.SolidPattern)
         palette.setBrush(QPalette.Active, QPalette.WindowText, brush)
@@ -1239,7 +1202,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout.addWidget(self.row_3)
 
-        self.stackedWidget.addWidget(self.learn)
+        self.stackedWidget.addWidget(self.dic)
         self.quiz = QWidget()
         self.quiz.setObjectName(u"quiz")
         self.verticalLayout_20 = QVBoxLayout(self.quiz)
@@ -1400,30 +1363,6 @@ class Ui_MainWindow(object):
         self.verticalLayout_14.setSpacing(0)
         self.verticalLayout_14.setObjectName(u"verticalLayout_14")
         self.verticalLayout_14.setContentsMargins(0, 0, 0, 0)
-        # self.btn_message = QPushButton(self.topMenus)
-        # self.btn_message.setObjectName(u"btn_message")
-        # sizePolicy.setHeightForWidth(self.btn_message.sizePolicy().hasHeightForWidth())
-        # self.btn_message.setSizePolicy(sizePolicy)
-        # self.btn_message.setMinimumSize(QSize(0, 45))
-        # self.btn_message.setFont(font)
-        # self.btn_message.setCursor(QCursor(Qt.PointingHandCursor))
-        # self.btn_message.setLayoutDirection(Qt.LeftToRight)
-        # self.btn_message.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-envelope-open.png);")
-        #
-        # self.verticalLayout_14.addWidget(self.btn_message)
-
-        # self.btn_print = QPushButton(self.topMenus)
-        # self.btn_print.setObjectName(u"btn_print")
-        # sizePolicy.setHeightForWidth(self.btn_print.sizePolicy().hasHeightForWidth())
-        # self.btn_print.setSizePolicy(sizePolicy)
-        # self.btn_print.setMinimumSize(QSize(0, 45))
-        # self.btn_print.setFont(font)
-        # self.btn_print.setCursor(QCursor(Qt.PointingHandCursor))
-        # self.btn_print.setLayoutDirection(Qt.LeftToRight)
-        # self.btn_print.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-print.png);")
-        #
-        # self.verticalLayout_14.addWidget(self.btn_print)
-
         self.btn_logout = QPushButton(self.topMenus)
         self.btn_logout.setObjectName(u"btn_logout")
         sizePolicy.setHeightForWidth(self.btn_logout.sizePolicy().hasHeightForWidth())
@@ -1497,7 +1436,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(4)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -1505,39 +1444,30 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-
-        self.titleLeftApp.setText(QCoreApplication.translate("MainWindow", u"ESL", None))
-        self.titleLeftDescription.setText(QCoreApplication.translate("MainWindow", u"Educate Sign Language", None))
-        self.toggleButton.setText(QCoreApplication.translate("MainWindow", u"", None))
-        self.btn_home.setText(QCoreApplication.translate("MainWindow", u"메인화면", None))
-        self.btn_learn.setText(QCoreApplication.translate("MainWindow", u"수어학습", None))
-        self.btn_quiz.setText(QCoreApplication.translate("MainWindow", u"수어퀴즈", None))
-        self.btn_wordList.setText(QCoreApplication.translate("MainWindow", u"단어장", None))
-        self.btn_dictionary.setText(QCoreApplication.translate("MainWindow", u"수어사전", None))
-        self.toggleLeftBox.setText(QCoreApplication.translate("MainWindow", u"환경설정", None))
-        self.extraLabel.setText(QCoreApplication.translate("MainWindow", u"환경설정", None))
+        self.titleLeftApp.setText(QCoreApplication.translate("MainWindow", u"PyDracula", None))
+        self.titleLeftDescription.setText(QCoreApplication.translate("MainWindow", u"Modern GUI / Flat Style", None))
+        self.toggleButton.setText(QCoreApplication.translate("MainWindow", u"Hide", None))
+        self.btn_home.setText(QCoreApplication.translate("MainWindow", u"\uba54\uc778\ud654\uba74", None))
+        self.btn_learn.setText(QCoreApplication.translate("MainWindow", u"\uc218\uc5b4\ud559\uc2b5", None))
+        self.btn_quiz.setText(QCoreApplication.translate("MainWindow", u"\uc218\uc5b4\ud034\uc988", None))
+        self.btn_wordList.setText(QCoreApplication.translate("MainWindow", u"\ub2e8\uc5b4\uc7a5", None))
+        self.btn_dictionary.setText(QCoreApplication.translate("MainWindow", u"\uc218\uc5b4\uc0ac\uc804", None))
+        self.toggleLeftBox.setText(QCoreApplication.translate("MainWindow", u"\ud658\uacbd\uc124\uc815", None))
+        self.extraLabel.setText(QCoreApplication.translate("MainWindow", u"Info", None))
 #if QT_CONFIG(tooltip)
         self.extraCloseColumnBtn.setToolTip(QCoreApplication.translate("MainWindow", u"Close left box", None))
 #endif // QT_CONFIG(tooltip)
         self.extraCloseColumnBtn.setText("")
-        self.btn_share.setText(QCoreApplication.translate("MainWindow", u"Share", None))
-        self.btn_adjustments.setText(QCoreApplication.translate("MainWindow", u"Adjustments", None))
-        self.btn_more.setText(QCoreApplication.translate("MainWindow", u"More", None))
+        self.textEdit.setMarkdown(QCoreApplication.translate("MainWindow", u"**ESL**  Educate Sign Language interface created using Python and PySide (support\n"
+"for PyQt)  MIT License\n"
+"\n"
+"", None))
         self.textEdit.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:600; color:#ff79c6;\">PyDracula</span></p>\n"
-"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">An interface created using Python and PySide (support for PyQt), and with colors based on the Dracula theme created by Zeno Rocha.</span></p>\n"
-"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><"
-                        "span style=\" color:#ffffff;\">MIT License</span></p>\n"
-"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#bd93f9;\">Created by: Wanderson M. Pimenta</span></p>\n"
-"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:600; color:#ff79c6;\">Convert UI</span></p>\n"
-"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:9pt; color:#ffffff;\">pyside6-uic main.ui &gt; ui_main.py</span></p>\n"
-"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:600; color:#ff79c6;\">Convert QRC</span></p>\n"
-"<p align=\"center\" style=\" margin-top:12px; "
-                        "margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:9pt; color:#ffffff;\">pyside6-rcc resources.qrc -o resources_rc.py</span></p></body></html>", None))
-        self.titleRightInfo.setText(QCoreApplication.translate("MainWindow", u"PyDracula APP - Theme with colors based on Dracula for Python.", None))
+"<p style=\" margin-top:6px; margin-bottom:6px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">ESL</span>  Educate Sign Language interface created using Python and PySide (support for PyQt)  MIT License</p></body></html>", None))
+        self.titleRightInfo.setText(QCoreApplication.translate("MainWindow", u"ESL - Educate Sign Language", None))
 #if QT_CONFIG(tooltip)
         self.settingsTopBtn.setToolTip(QCoreApplication.translate("MainWindow", u"Settings", None))
 #endif // QT_CONFIG(tooltip)
@@ -1623,10 +1553,8 @@ class Ui_MainWindow(object):
         self.age_btn.setText("")
         self.language_btn.setText("")
         self.birth_btn.setText("")
-        # self.btn_message.setText(QCoreApplication.translate("MainWindow", u"Message", None))
-        # self.btn_print.setText(QCoreApplication.translate("MainWindow", u"Print", None))
         self.btn_logout.setText(QCoreApplication.translate("MainWindow", u"Logout", None))
-        self.creditsLabel.setText(QCoreApplication.translate("MainWindow", u"By: Wanderson M. Pimenta", None))
+        self.creditsLabel.setText(QCoreApplication.translate("MainWindow", u"ESL - Educate Sign Language", None))
         self.version.setText(QCoreApplication.translate("MainWindow", u"v1.0.3", None))
     # retranslateUi
 
