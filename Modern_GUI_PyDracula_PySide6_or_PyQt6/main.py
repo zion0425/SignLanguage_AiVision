@@ -44,23 +44,6 @@ class MainWindow(QMainWindow):
     suffix = '.mp4'
     videoName = ''
 
-    def initVideoWebcam(self, videoName, vLable, cLable):
-        self.sign_video = vLable
-        self.vid_thread = VideoThread()
-        self.setVideoName(videoName)
-        self.vid_thread.setVideoPath(self.current_dir + self.prefix + self.videoName + self.suffix)
-        self.vid_thread.change_pixmap_signal.connect(self.update_vid_image)
-
-        self.webcam = cLable
-        self.webcam_thread = WebCamThread()
-        self.webcam_thread.change_pixmap_signal.connect(self.update_webcam_image)
-
-        self.sign_video.setScaledContents(True)
-        self.webcam.setScaledContents(True)
-
-    def setVideoName(self, videoName):
-        self.videoName = videoName
-
     @Slot(np.ndarray)
     def update_vid_image(self, cv_img):
         """Updates the image_label with a new opencv image"""
@@ -82,22 +65,49 @@ class MainWindow(QMainWindow):
         p = QPixmap.fromImage(convert_to_Qt_format)
         return p
 
+    def initVideoWebcam(self, videoName, vLable, cLable):
+        self.sign_video = vLable
+        self.vid_thread = VideoThread()
+        self.setVideoName(videoName)
+        self.vid_thread.setVideoPath(self.current_dir + self.prefix + self.videoName + self.suffix)
+        self.vid_thread.change_pixmap_signal.connect(self.update_vid_image)
+
+        self.webcam = cLable
+        self.webcam_thread = WebCamThread(widgets)
+        self.webcam_thread.change_pixmap_signal.connect(self.update_webcam_image)
+
+        self.sign_video.setScaledContents(True)
+        self.webcam.setScaledContents(True)
+
+    def setVideoName(self, videoName):
+        self.videoName = videoName
+
     def startVideo(self):
         if not (self.vid_thread.isRunning() and self.webcam_thread.isRunning()):
             self.initVideoWebcam(self.videoName, widgets.vid_label, widgets.webcam_label)
         self.vid_thread.start()
         self.webcam_thread.start()
 
-
     def stopVideo(self):
+        self.vid_thread.stop()
+
+    def stopThreadds(self):
         self.vid_thread.stop()
         self.webcam_thread.stop()
         # 필요한지 의문임.
         # del self.vid_thread
         # del self.webcam_thread
-    def relodingVideoCam(self, videoName, vLable, cLable):
+
+    def relodingVideo(self, videoName):
         self.stopVideo()
-        self.initVideoWebcam(videoName)
+        self.vid_thread = VideoThread()
+        self.setVideoName(videoName)
+        widgets.about_video.setText(videoName)
+        self.vid_thread.setVideoPath(self.current_dir + self.prefix + self.videoName + self.suffix)
+        self.webcam_thread.setCurrentVdiName(videoName)
+        self.vid_thread.change_pixmap_signal.connect(self.update_vid_image)
+        self.vid_thread.start()
+
     def __init__(self):
         QMainWindow.__init__(self)
         # SET AS GLOBAL WIDGETS
@@ -107,14 +117,25 @@ class MainWindow(QMainWindow):
         global widgets
         widgets = self.ui
 
+        # //////////////// 비디오 이름 세팅 ///////////////////////
+        self.videoFileNames = {
+            'hobby': ['특기', '물놀이', '테니스', '수영', '노래', '마라톤', '낚시', '야구', '권투', '없다'],
+            'character': ['계획적', '똑똑하다', '귀엽다', '고리타분', '수다스럽다', '긍정적', '독특', '조용하다', '솔직하다', '엉뚱'],
+            'family': ['친모', '친부', '여동생', '누나', '오빠', '할머니', '할아버자', '형'],
+            'birth': ['한국인'],
+            'age': ['노인', '어른', '청년', '청소년'],
+            'language': ['한국어', '영어', '일본어']
+        }
+        # 카테고리별 학습할 수어의 개수를 저장하는 변수
+        self.learnCnt = {"hobby": 10, "character": 10, "family": 8, "birth": 1, "age": 4, "language": 3}
+
+        # 유저가 학습하고자 하는 카테고리의 value값을 저장하는 변수
+        # 카테고리 선택할 때마다 해당 카테고리의 value값을 넣어준다.
+        # 학습 완료, 학습 화면 이탈 시에는, 해당 카테고리의 value값을 0으로 초기화 한다.
+        self.userLearnCnt = 0
+
         #   비디오 캠 세팅 #############################
         self.initVideoWebcam('권투', widgets.vid_label, widgets.webcam_label)
-        #   비디오 캠 리로딩 #############################
-        # self.relodingVideoCam('권투', widgets.sign_video, widgets.webcam)
-        #   비디오 캠 시작 ################################
-        #self.startVideo()
-        #   비디오 캠 정지 ################################
-        # self.stopVideo()
 
 
 
@@ -161,6 +182,7 @@ class MainWindow(QMainWindow):
         widgets.language_btn.clicked.connect(self.buttonClick)
         widgets.birth_btn.clicked.connect(self.buttonClick)
         widgets.pushButton.clicked.connect(self.buttonClick)
+        widgets.pushButton_2.clicked.connect(self.buttonClick)
 
         # EXTRA LEFT BOX
         def openCloseLeftBox():
@@ -200,9 +222,8 @@ class MainWindow(QMainWindow):
         # GET BUTTON CLICKED
         btn = self.sender()
         btnName = btn.objectName()
-
-        if not btnName == "btn_learn":
-            self.stopVideo()
+        if btnName != "btn_learn" and btnName != "pushButton_2":
+            self.stopThreadds()
 
         # SHOW HOME PAGE
         if btnName == "btn_home":
@@ -231,7 +252,6 @@ class MainWindow(QMainWindow):
             widgets.stackedWidget.setCurrentWidget(widgets.dic)  # SET PAGE
             UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))  # SELECT MENU
-            # self.startVideo()
             print("Save BTN clicked!")
 
         # if btnName == "btn_dictionary":
@@ -241,44 +261,42 @@ class MainWindow(QMainWindow):
         #     # self.startVideo()
         #     print("Save BTN clicked!")
 
-        if btnName == "hobby_btn":
+        if btnName == "pushButton_2" :
+            self.userLearnCnt -= 1
+            if self.userLearnCnt < 0 :
+                print("finished")
+            widgets.pushButton_2.setEnabled(False)
+            widgets.about_webcam.setText("")
+            self.webcam_thread.setCorrectCnt(0)
+            self.currentVideoName = self.videoFileNames.get(self.currentCategory)[self.userLearnCnt]
+            self.webcam_thread.setCurrentVdiName(self.currentVideoName)
+            self.relodingVideo(self.currentVideoName)
+
+        if btnName == "hobby_btn" or btnName == "age_btn" or btnName == "language_btn" or btnName == "birth_btn" or btnName == "character_btn" or btnName == "family_btn":
             widgets.stackedWidget.setCurrentWidget(widgets.learning_page)  # SET PAGE
             UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))  # SELECT MENU
             self.startVideo()
 
-        if btnName == "character_btn":
-            widgets.stackedWidget.setCurrentWidget(widgets.learning_page)  # SET PAGE
-            UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
-            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))  # SELECT MENU
-            self.startVideo()
+            # continue 버튼을 비활성화 상태로 둔다.
+            widgets.pushButton_2.setEnabled(False)
+            widgets.about_webcam.setText("")
+            # 유저가 선택한 학습하고자 한 카테고리 버튼, 즉 카테고리명 저장
+            self.currentCategory = btnName.split("_")[0]
+            # 유저 카운트, 학습해야 할 수어개수를 저장
+            self.userLearnCnt = self.learnCnt[btnName.split("_")[0]] - 1
+            # 현재 학습중인 비디오 이름 저장
+            self.currentVideoName = self.videoFileNames.get(self.currentCategory)[self.userLearnCnt]
+            # 비디오 레이블 재설정
+            # widgets.about_video = self.webcam_thread.getAction()
+            # if (self.webcam_thread.getAction() == )
+            # if (self.userLearnCnt <= 0)
+                # 버튼 활성화
+                # widgets.pushButton_2.setEnabled(True)
+            ###############여기까지 쓰레드
+            self.relodingVideo(self.currentVideoName)
 
-        if btnName == "family_btn":
-            widgets.stackedWidget.setCurrentWidget(widgets.learning_page)  # SET PAGE
-            UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
-            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))  # SELECT MENU
-            self.startVideo()
-
-        if btnName == "age_btn":
-            widgets.stackedWidget.setCurrentWidget(widgets.learning_page)  # SET PAGE
-            UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
-            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))  # SELECT MENU
-            self.startVideo()
-
-        if btnName == "language_btn":
-            widgets.stackedWidget.setCurrentWidget(widgets.learning_page)  # SET PAGE
-            UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
-            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))  # SELECT MENU
-            self.startVideo()
-
-        if btnName == "birth_btn":
-            widgets.stackedWidget.setCurrentWidget(widgets.learning_page)  # SET PAGE
-            UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
-            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))  # SELECT MENU
-            self.startVideo()
-
-        # PRINT BTN NAME
-        print(f'Button "{btnName}" pressed!')
+        # else :
 
     # RESIZE EVENTS
     # ///////////////////////////////////////////////////////////////
@@ -297,8 +315,6 @@ class MainWindow(QMainWindow):
             print('Mouse click: LEFT CLICK')
         if event.buttons() == Qt.RightButton:
             print('Mouse click: RIGHT CLICK')
-
-
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
