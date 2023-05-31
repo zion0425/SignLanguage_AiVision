@@ -1,9 +1,12 @@
 <RCC>
   <qresource prefix="images">
     <file>images/images/esl_big.png</file>
-    <file>images/icons/learn.png</file>
-    <file>images/icons/dic.png</file>
     <file>images/images/ESL_logo 1.png</file>
+    <file>images/icons/Home.png</file>
+    <file>images/icons/learn.png</file>
+    <file>images/icons/Book_open.png</file>
+    <file>images/icons/dict.png</file>
+    <file>images/icons/quiz.png</file>
     <file>images/images/age.png</file>
     <file>images/images/birth.png</file>
     <file>images/images/character.png</file>

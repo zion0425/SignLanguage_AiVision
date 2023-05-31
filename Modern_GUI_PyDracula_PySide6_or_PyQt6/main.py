@@ -228,7 +228,7 @@ class MainWindow(QMainWindow):
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet())) # SELECT MENU
 
         if btnName == "btn_wordList":
-            widgets.stackedWidget.setCurrentWidget(widgets.learn)  # SET PAGE
+            widgets.stackedWidget.setCurrentWidget(widgets.dic)  # SET PAGE
             UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))  # SELECT MENU
             # self.startVideo()
