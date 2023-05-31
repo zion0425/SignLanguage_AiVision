@@ -1768,7 +1768,7 @@ p, li { white-space: pre-wrap; }
                       <string notr="true">background: transparent;</string>
                      </property>
                      <property name="currentIndex">
-                      <number>4</number>
+                      <number>5</number>
                      </property>
                      <widget class="QWidget" name="home">
                       <property name="styleSheet">
@@ -1821,8 +1821,8 @@ background-repeat: no-repeat;</string>
                            <rect>
                             <x>0</x>
                             <y>0</y>
-                            <width>98</width>
-                            <height>28</height>
+                            <width>1086</width>
+                            <height>603</height>
                            </rect>
                           </property>
                           <layout class="QVBoxLayout" name="verticalLayout_23">
@@ -2627,6 +2627,85 @@ background-position: center;</string>
                         </layout>
                        </item>
                       </layout>
+                     </widget>
+                     <widget class="QWidget" name="dictionary">
+                      <widget class="QLineEdit" name="search_sign">
+                       <property name="geometry">
+                        <rect>
+                         <x>30</x>
+                         <y>30</y>
+                         <width>251</width>
+                         <height>31</height>
+                        </rect>
+                       </property>
+                      </widget>
+                      <widget class="QPushButton" name="btn_search_sign">
+                       <property name="geometry">
+                        <rect>
+                         <x>310</x>
+                         <y>30</y>
+                         <width>111</width>
+                         <height>31</height>
+                        </rect>
+                       </property>
+                       <property name="text">
+                        <string>검색</string>
+                       </property>
+                      </widget>
+                      <widget class="QScrollArea" name="scrollArea">
+                       <property name="geometry">
+                        <rect>
+                         <x>80</x>
+                         <y>80</y>
+                         <width>271</width>
+                         <height>521</height>
+                        </rect>
+                       </property>
+                       <property name="widgetResizable">
+                        <bool>true</bool>
+                       </property>
+                       <widget class="QWidget" name="scrollAreaWidgetContents">
+                        <property name="geometry">
+                         <rect>
+                          <x>0</x>
+                          <y>0</y>
+                          <width>269</width>
+                          <height>519</height>
+                         </rect>
+                        </property>
+                        <layout class="QVBoxLayout" name="verticalLayout_16">
+                         <item>
+                          <widget class="QListView" name="sign_word_list"/>
+                         </item>
+                        </layout>
+                       </widget>
+                      </widget>
+                      <widget class="QLabel" name="label_3">
+                       <property name="geometry">
+                        <rect>
+                         <x>480</x>
+                         <y>240</y>
+                         <width>471</width>
+                         <height>251</height>
+                        </rect>
+                       </property>
+                       <property name="text">
+                        <string/>
+                       </property>
+                      </widget>
+                      <widget class="QLabel" name="sign_word_info">
+                       <property name="geometry">
+                        <rect>
+                         <x>540</x>
+                         <y>140</y>
+                         <width>361</width>
+                         <height>61</height>
+                        </rect>
+                       </property>
+                       <property name="text">
+                        <string>About Sign Word</string>
+                       </property>
+                      </widget>
                      </widget>
                     </widget>
                    </item>
