@@ -24,6 +24,7 @@ import os
 import platform
 from Modern_GUI_PyDracula_PySide6_or_PyQt6.video_thread import VideoThread
 from Modern_GUI_PyDracula_PySide6_or_PyQt6.web_cam_thread import WebCamThread
+import dictionary
 
 
 # from Modern_GUI_PyDracula_PySide6_or_PyQt6.vdi_cam import Vdi_Cam
@@ -231,15 +232,11 @@ class MainWindow(QMainWindow):
             widgets.stackedWidget.setCurrentWidget(widgets.dic)  # SET PAGE
             UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))  # SELECT MENU
-            # self.startVideo()
-            print("Save BTN clicked!")
 
-        # if btnName == "btn_dictionary":
-        #     widgets.stackedWidget.setCurrentWidget(widgets.choose_course)  # SET PAGE
-        #     UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
-        #     btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))  # SELECT MENU
-        #     # self.startVideo()
-        #     print("Save BTN clicked!")
+        if btnName == "btn_dictionary":
+            widgets.stackedWidget.setCurrentWidget(widgets.dictionary)  # SET PAGE
+            UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
+            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))  # SELECT MENU
 
         if btnName == "hobby_btn":
             widgets.stackedWidget.setCurrentWidget(widgets.learning_page)  # SET PAGE
@@ -304,4 +301,7 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     app.setWindowIcon(QIcon("images/images/ESL_logo_small2.ico"))
     window = MainWindow()
+
+    dictionary.dictionary(widgets)
+
     sys.exit(app.exec())

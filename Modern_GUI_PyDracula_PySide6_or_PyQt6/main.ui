@@ -1821,8 +1821,8 @@ background-repeat: no-repeat;</string>
                            <rect>
                             <x>0</x>
                             <y>0</y>
-                            <width>1086</width>
-                            <height>603</height>
+                            <width>98</width>
+                            <height>28</height>
                            </rect>
                           </property>
                           <layout class="QVBoxLayout" name="verticalLayout_23">
@@ -2655,9 +2655,9 @@ background-position: center;</string>
                       <widget class="QScrollArea" name="scrollArea">
                        <property name="geometry">
                         <rect>
-                         <x>80</x>
+                         <x>50</x>
                          <y>80</y>
-                         <width>271</width>
+                         <width>361</width>
                          <height>521</height>
                         </rect>
                        </property>
@@ -2669,7 +2669,7 @@ background-position: center;</string>
                          <rect>
                           <x>0</x>
                           <y>0</y>
-                          <width>269</width>
+                          <width>359</width>
                           <height>519</height>
                          </rect>
                         </property>
