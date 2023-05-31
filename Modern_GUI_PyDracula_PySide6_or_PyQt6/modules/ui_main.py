@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainsSOfit.ui'
+## Form generated from reading UI file 'maineJxqSP.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -1458,15 +1458,22 @@ class Ui_MainWindow(object):
         self.extraCloseColumnBtn.setToolTip(QCoreApplication.translate("MainWindow", u"Close left box", None))
 #endif // QT_CONFIG(tooltip)
         self.extraCloseColumnBtn.setText("")
-        self.textEdit.setMarkdown(QCoreApplication.translate("MainWindow", u"**ESL**  Educate Sign Language interface created using Python and PySide (support\n"
-"for PyQt)  MIT License\n"
+        self.textEdit.setMarkdown(QCoreApplication.translate("MainWindow", u"**ESL**\n"
+"\n"
+"Educate Sign Language interface created using Python and PySide (support for\n"
+"PyQt) \n"
+"\n"
+"MIT License\n"
 "\n"
 "", None))
         self.textEdit.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:6px; margin-bottom:6px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">ESL</span>  Educate Sign Language interface created using Python and PySide (support for PyQt)  MIT License</p></body></html>", None))
+"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:600; color:#ff79c6;\">ESL</span></p>\n"
+"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">Educate Sign Language interface created using Python and PySide (support for PyQt) </span></p>\n"
+"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">MIT License</span></p>"
+                        "</body></html>", None))
         self.titleRightInfo.setText(QCoreApplication.translate("MainWindow", u"ESL - Educate Sign Language", None))
 #if QT_CONFIG(tooltip)
         self.settingsTopBtn.setToolTip(QCoreApplication.translate("MainWindow", u"Settings", None))
