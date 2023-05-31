@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'maineJxqSP.ui'
+## Form generated from reading UI file 'maincnAOPQ.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -1323,6 +1323,36 @@ class Ui_MainWindow(object):
         self.verticalLayout_24.addLayout(self.verticalLayout_22)
 
         self.stackedWidget.addWidget(self.wordList)
+        self.dictionary = QWidget()
+        self.dictionary.setObjectName(u"dictionary")
+        self.search_sign = QLineEdit(self.dictionary)
+        self.search_sign.setObjectName(u"search_sign")
+        self.search_sign.setGeometry(QRect(30, 30, 251, 31))
+        self.btn_search_sign = QPushButton(self.dictionary)
+        self.btn_search_sign.setObjectName(u"btn_search_sign")
+        self.btn_search_sign.setGeometry(QRect(310, 30, 111, 31))
+        self.scrollArea = QScrollArea(self.dictionary)
+        self.scrollArea.setObjectName(u"scrollArea")
+        self.scrollArea.setGeometry(QRect(50, 80, 361, 521))
+        self.scrollArea.setWidgetResizable(True)
+        self.scrollAreaWidgetContents = QWidget()
+        self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 359, 519))
+        self.verticalLayout_16 = QVBoxLayout(self.scrollAreaWidgetContents)
+        self.verticalLayout_16.setObjectName(u"verticalLayout_16")
+        self.sign_word_list = QListView(self.scrollAreaWidgetContents)
+        self.sign_word_list.setObjectName(u"sign_word_list")
+
+        self.verticalLayout_16.addWidget(self.sign_word_list)
+
+        self.scrollArea.setWidget(self.scrollAreaWidgetContents)
+        self.label_3 = QLabel(self.dictionary)
+        self.label_3.setObjectName(u"label_3")
+        self.label_3.setGeometry(QRect(480, 240, 471, 251))
+        self.sign_word_info = QLabel(self.dictionary)
+        self.sign_word_info.setObjectName(u"sign_word_info")
+        self.sign_word_info.setGeometry(QRect(540, 140, 361, 61))
+        self.stackedWidget.addWidget(self.dictionary)
 
         self.verticalLayout_15.addWidget(self.stackedWidget)
 
@@ -1436,7 +1466,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(4)
+        self.stackedWidget.setCurrentIndex(5)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -1560,6 +1590,9 @@ class Ui_MainWindow(object):
         self.age_btn.setText("")
         self.language_btn.setText("")
         self.birth_btn.setText("")
+        self.btn_search_sign.setText(QCoreApplication.translate("MainWindow", u"\uac80\uc0c9", None))
+        self.label_3.setText("")
+        self.sign_word_info.setText(QCoreApplication.translate("MainWindow", u"About Sign Word", None))
         self.btn_logout.setText(QCoreApplication.translate("MainWindow", u"Logout", None))
         self.creditsLabel.setText(QCoreApplication.translate("MainWindow", u"ESL - Educate Sign Language", None))
         self.version.setText(QCoreApplication.translate("MainWindow", u"v1.0.3", None))

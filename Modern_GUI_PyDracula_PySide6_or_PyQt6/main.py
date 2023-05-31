@@ -24,6 +24,7 @@ import os
 import platform
 from Modern_GUI_PyDracula_PySide6_or_PyQt6.video_thread import VideoThread
 from Modern_GUI_PyDracula_PySide6_or_PyQt6.web_cam_thread import WebCamThread
+import dictionary
 
 
 # from Modern_GUI_PyDracula_PySide6_or_PyQt6.vdi_cam import Vdi_Cam
@@ -252,14 +253,11 @@ class MainWindow(QMainWindow):
             widgets.stackedWidget.setCurrentWidget(widgets.dic)  # SET PAGE
             UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))  # SELECT MENU
-            print("Save BTN clicked!")
 
-        # if btnName == "btn_dictionary":
-        #     widgets.stackedWidget.setCurrentWidget(widgets.choose_course)  # SET PAGE
-        #     UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
-        #     btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))  # SELECT MENU
-        #     # self.startVideo()
-        #     print("Save BTN clicked!")
+        if btnName == "btn_dictionary":
+            widgets.stackedWidget.setCurrentWidget(widgets.dictionary)  # SET PAGE
+            UIFunctions.resetStyle(self, btnName)  # RESET ANOTHERS BUTTONS SELECTED
+            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))  # SELECT MENU
 
         if btnName == "pushButton_2" :
             self.userLearnCnt -= 1
@@ -287,13 +285,6 @@ class MainWindow(QMainWindow):
             self.userLearnCnt = self.learnCnt[btnName.split("_")[0]] - 1
             # 현재 학습중인 비디오 이름 저장
             self.currentVideoName = self.videoFileNames.get(self.currentCategory)[self.userLearnCnt]
-            # 비디오 레이블 재설정
-            # widgets.about_video = self.webcam_thread.getAction()
-            # if (self.webcam_thread.getAction() == )
-            # if (self.userLearnCnt <= 0)
-                # 버튼 활성화
-                # widgets.pushButton_2.setEnabled(True)
-            ###############여기까지 쓰레드
             self.relodingVideo(self.currentVideoName)
 
         # else :
@@ -320,4 +311,7 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     app.setWindowIcon(QIcon("images/images/ESL_logo_small2.ico"))
     window = MainWindow()
+
+    dictionary.dictionary(widgets)
+
     sys.exit(app.exec())
