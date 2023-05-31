@@ -31,6 +31,13 @@ font = ImageFont.truetype(fontpath,40, encoding='unic')
 
 class WebCamThread(QThread):
     change_pixmap_signal = Signal(np.ndarray)
+    user_action = ''
+    currentVdiName = ''
+    correctCnt = 0
+    def setCorrectCnt(self, cnt):
+        self.correctCnt = cnt
+    def setCurrentVdiName(self, vdiName):
+        self.currentVdiName = vdiName
 
     def put_korean_text(self, image, text, position):
         font_size = 50
@@ -41,9 +48,11 @@ class WebCamThread(QThread):
         image = np.array(img_pil)
         return image
 
-    def __init__(self):
+    def __init__(self, widgets):
         super().__init__()
         self._run_flag = True
+        self.widgets = widgets
+
 
     def run(self):
         # capture from web cam
@@ -116,13 +125,16 @@ class WebCamThread(QThread):
                             action_start_time = None
                             continue
 
-                        this_action = '?'
+                        this_action = ''
                         if action_seq[-1] == action_seq[-2] == action_seq[-3]:
                             if action_start_time is None:
                                 action_start_time = time.time()
                             elif time.time() - action_start_time >= 3:
-                                this_action = action
-                                print(this_action)
+                                if (action == self.currentVdiName):
+                                    self.correctCnt += 1
+                                    self.widgets.pushButton_2.setEnabled(True)
+                                self.widgets.about_webcam.setText("인식 동작 : " + action + "\n성공횟수 : " + self.correctCnt.__str__())
+                                # print(this_action)
                                 action_start_time = None
 
                         # Put Korean text
@@ -137,7 +149,11 @@ class WebCamThread(QThread):
                 break
         cap.release()
 
+
     def stop(self):
         """Sets run flag to False and waits for thread to finish"""
         self._run_flag = False
         self.wait()
+
+    def getAction(self):
+        return self.user_action
