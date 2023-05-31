@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainVjIhTQ.ui'
+## Form generated from reading UI file 'mainsSOfit.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -1017,7 +1017,7 @@ class Ui_MainWindow(object):
         self.scrollArea_2.setWidgetResizable(True)
         self.learning_container = QWidget()
         self.learning_container.setObjectName(u"learning_container")
-        self.learning_container.setGeometry(QRect(0, 0, 1086, 603))
+        self.learning_container.setGeometry(QRect(0, 0, 98, 28))
         self.verticalLayout_23 = QVBoxLayout(self.learning_container)
         self.verticalLayout_23.setSpacing(0)
         self.verticalLayout_23.setObjectName(u"verticalLayout_23")
@@ -1444,9 +1444,9 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.titleLeftApp.setText(QCoreApplication.translate("MainWindow", u"PyDracula", None))
-        self.titleLeftDescription.setText(QCoreApplication.translate("MainWindow", u"Modern GUI / Flat Style", None))
-        self.toggleButton.setText(QCoreApplication.translate("MainWindow", u"Hide", None))
+        self.titleLeftApp.setText(QCoreApplication.translate("MainWindow", u"ESL", None))
+        self.titleLeftDescription.setText(QCoreApplication.translate("MainWindow", u"Educate Sign Language", None))
+        self.toggleButton.setText("")
         self.btn_home.setText(QCoreApplication.translate("MainWindow", u"\uba54\uc778\ud654\uba74", None))
         self.btn_learn.setText(QCoreApplication.translate("MainWindow", u"\uc218\uc5b4\ud559\uc2b5", None))
         self.btn_quiz.setText(QCoreApplication.translate("MainWindow", u"\uc218\uc5b4\ud034\uc988", None))
