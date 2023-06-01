@@ -1,5 +1,8 @@
 <RCC>
   <qresource prefix="images">
+    <file>images/images/btn_show_hint.png</file>
+    <file>images/images/refresh_phrase.png</file>
+    <file>images/images/quiz_title_label.png</file>
     <file>images/images/learn_sign_logo2.png</file>
     <file>images/images/sign_quiz_2.png</file>
     <file>images/images/learn_sign_logo.png</file>
