@@ -186,6 +186,7 @@ class MainWindow(QMainWindow):
         widgets.birth_btn.clicked.connect(self.buttonClick)
         widgets.pushButton.clicked.connect(self.buttonClick)
         widgets.pushButton_2.clicked.connect(self.buttonClick)
+        widgets.btn_start_learn.clicked.connect(self.buttonClick)
 
         # EXTRA LEFT BOX
         def openCloseLeftBox():
@@ -217,7 +218,7 @@ class MainWindow(QMainWindow):
 
         # SET HOME PAGE AND SELECT MENU
         # ///////////////////////////////////////////////////////////////
-        widgets.stackedWidget.setCurrentWidget(widgets.home)
+        widgets.stackedWidget.setCurrentWidget(widgets.quiz)
         widgets.btn_home.setStyleSheet(UIFunctions.selectMenu(widgets.btn_home.styleSheet()))
 
     # ///////////////////////////////////////////////////////////////
@@ -230,14 +231,12 @@ class MainWindow(QMainWindow):
 
         # SHOW HOME PAGE
         if btnName == "btn_home":
-            widgets.stackedWidget.setCurrentWidget(widgets.home)
+            widgets.stackedWidget.setCurrentWidget(widgets.quiz)
             UIFunctions.resetStyle(self, btnName)
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
 
-        if btnName == "pushButton":
+        if btnName == "btn_start_learn":
             widgets.stackedWidget.setCurrentWidget(widgets.wordList)
-            UIFunctions.resetStyle(self, btnName)
-            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
 
         # SHOW WIDGETS PAGE
         if btnName == "btn_learn":

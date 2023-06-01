@@ -1,5 +1,9 @@
 <RCC>
   <qresource prefix="images">
+    <file>images/images/learn_sign_logo2.png</file>
+    <file>images/images/sign_quiz_2.png</file>
+    <file>images/images/learn_sign_logo.png</file>
+    <file>images/images/sign_quiz_logo.png</file>
     <file>images/images/esl_big.png</file>
     <file>images/images/ESL_logo 1.png</file>
     <file>images/icons/Home.png</file>
