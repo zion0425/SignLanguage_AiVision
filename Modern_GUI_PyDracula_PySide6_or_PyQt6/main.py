@@ -22,6 +22,7 @@ import numpy as np
 import sys
 import os
 import platform
+from Modern_GUI_PyDracula_PySide6_or_PyQt6.dictionary import Dictionary
 from Modern_GUI_PyDracula_PySide6_or_PyQt6.video_thread import VideoThread
 from Modern_GUI_PyDracula_PySide6_or_PyQt6.web_cam_thread import WebCamThread
 import dictionary
@@ -69,6 +70,7 @@ class MainWindow(QMainWindow):
     def initVideoWebcam(self, videoName, vLable, cLable):
         self.sign_video = vLable
         self.vid_thread = VideoThread()
+
         self.setVideoName(videoName)
         self.vid_thread.setVideoPath(self.current_dir + self.prefix + self.videoName + self.suffix)
         self.vid_thread.change_pixmap_signal.connect(self.update_vid_image)
@@ -319,7 +321,6 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     app.setWindowIcon(QIcon("images/images/ESL_logo_small2.ico"))
     window = MainWindow()
-
-    dictionary.dictionary(widgets)
+    dic = Dictionary(widgets)
 
     sys.exit(app.exec())

@@ -8,7 +8,6 @@ actions = ['일본어', '솔직하다', '오빠', '할아버지', '어른', '물
 
 class VideoThread(QThread):
     change_pixmap_signal = Signal(np.ndarray)
-    current_dir = os.path.abspath(os.path.dirname(__file__))
     videoPath = ''
 
     def setVideoPath(self, path):
@@ -32,7 +31,6 @@ class VideoThread(QThread):
                 self.change_pixmap_signal.emit(cv_img)
             else:
                 cap.set(cv2.CAP_PROP_POS_FRAMES, 0)  # 영상이 끝나면 다시 처음으로 돌아감
-
             # 재생 주기만큼 대기
             cv2.waitKey(delay)
 
