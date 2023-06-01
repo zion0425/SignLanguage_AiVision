@@ -2,7 +2,7 @@ import numpy as np
 from tensorflow.keras.models import load_model
 import mediapipe as mp
 from PIL import ImageFont, ImageDraw, Image
-from PySide6.QtCore import Signal, Slot, Qt, QThread, QFile
+from PySide6.QtCore import Signal, Slot, Qt, QThread, QFile, QRect
 import cv2
 import time
 import os
@@ -34,6 +34,7 @@ class WebCamThread(QThread):
     user_action = ''
     currentVdiName = ''
     correctCnt = 0
+
     def setCorrectCnt(self, cnt):
         self.correctCnt = cnt
     def setCurrentVdiName(self, vdiName):
@@ -52,7 +53,6 @@ class WebCamThread(QThread):
         super().__init__()
         self._run_flag = True
         self.widgets = widgets
-
 
     def run(self):
         # capture from web cam
@@ -120,7 +120,6 @@ class WebCamThread(QThread):
 
                         action = actions[i_pred]
                         action_seq.append(action)
-
                         if len(action_seq) < 3:
                             action_start_time = None
                             continue
@@ -130,10 +129,15 @@ class WebCamThread(QThread):
                             if action_start_time is None:
                                 action_start_time = time.time()
                             elif time.time() - action_start_time >= 3:
-                                if (action == self.currentVdiName):
+                                if action == self.currentVdiName:
                                     self.correctCnt += 1
-                                    self.widgets.pushButton_2.setEnabled(True)
-                                self.widgets.about_webcam.setText("인식 동작 : " + action + "\n성공횟수 : " + self.correctCnt.__str__())
+                                    if self.correctCnt >= 2:
+                                        self.widgets.pushButton_2.setEnabled(True)
+                                        self.widgets.pushButton_2.setStyleSheet("background-color: #4CAF50; ufont-size: 32px;")
+                                        action = ""
+                                self.widgets.about_webcam.setText(
+                                    "인식 동작 : " + action + "\n성공횟수 : " + self.correctCnt.__str__())
+                                self.widgets.about_webcam.setStyleSheet("font-size: 20px;")
                                 # print(this_action)
                                 action_start_time = None
 
