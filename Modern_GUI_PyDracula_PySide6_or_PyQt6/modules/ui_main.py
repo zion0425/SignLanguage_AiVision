@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'maincnAOPQ.ui'
+## Form generated from reading UI file 'mainQtXjQL.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -994,6 +994,41 @@ class Ui_MainWindow(object):
         self.stackedWidget = QStackedWidget(self.pagesContainer)
         self.stackedWidget.setObjectName(u"stackedWidget")
         self.stackedWidget.setStyleSheet(u"background: transparent;")
+        self.quiz = QWidget()
+        self.quiz.setObjectName(u"quiz")
+        self.verticalLayout_20 = QVBoxLayout(self.quiz)
+        self.verticalLayout_20.setObjectName(u"verticalLayout_20")
+        self.sign_quiz_start = QFrame(self.quiz)
+        self.sign_quiz_start.setObjectName(u"sign_quiz_start")
+        self.sign_quiz_start.setStyleSheet(u"background-color: rgb(0, 0, 0);")
+        self.sign_quiz_start.setFrameShape(QFrame.StyledPanel)
+        self.sign_quiz_start.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_6 = QHBoxLayout(self.sign_quiz_start)
+        self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
+        self.btn_start_learn = QPushButton(self.sign_quiz_start)
+        self.btn_start_learn.setObjectName(u"btn_start_learn")
+        self.btn_start_learn.setMinimumSize(QSize(300, 300))
+        self.btn_start_learn.setMaximumSize(QSize(300, 300))
+        self.btn_start_learn.setStyleSheet(u"background-image: url(:/images/images/images/learn_sign_logo2.png);\n"
+"background-position: center;\n"
+"background-repeat: no-repeat;")
+
+        self.horizontalLayout_6.addWidget(self.btn_start_learn)
+
+        self.btn_start_quiz = QPushButton(self.sign_quiz_start)
+        self.btn_start_quiz.setObjectName(u"btn_start_quiz")
+        self.btn_start_quiz.setMinimumSize(QSize(300, 300))
+        self.btn_start_quiz.setMaximumSize(QSize(300, 300))
+        self.btn_start_quiz.setStyleSheet(u"background-image: url(:/images/images/images/sign_quiz_2.png);\n"
+"background-position: center;\n"
+"background-repeat: no-repeat;")
+
+        self.horizontalLayout_6.addWidget(self.btn_start_quiz)
+
+
+        self.verticalLayout_20.addWidget(self.sign_quiz_start)
+
+        self.stackedWidget.addWidget(self.quiz)
         self.home = QWidget()
         self.home.setObjectName(u"home")
         self.home.setStyleSheet(u"")
@@ -1017,7 +1052,7 @@ class Ui_MainWindow(object):
         self.scrollArea_2.setWidgetResizable(True)
         self.learning_container = QWidget()
         self.learning_container.setObjectName(u"learning_container")
-        self.learning_container.setGeometry(QRect(0, 0, 98, 28))
+        self.learning_container.setGeometry(QRect(0, 0, 1086, 603))
         self.verticalLayout_23 = QVBoxLayout(self.learning_container)
         self.verticalLayout_23.setSpacing(0)
         self.verticalLayout_23.setObjectName(u"verticalLayout_23")
@@ -1203,17 +1238,6 @@ class Ui_MainWindow(object):
         self.verticalLayout.addWidget(self.row_3)
 
         self.stackedWidget.addWidget(self.dic)
-        self.quiz = QWidget()
-        self.quiz.setObjectName(u"quiz")
-        self.verticalLayout_20 = QVBoxLayout(self.quiz)
-        self.verticalLayout_20.setObjectName(u"verticalLayout_20")
-        self.label = QLabel(self.quiz)
-        self.label.setObjectName(u"label")
-        self.label.setAlignment(Qt.AlignCenter)
-
-        self.verticalLayout_20.addWidget(self.label)
-
-        self.stackedWidget.addWidget(self.quiz)
         self.wordList = QWidget()
         self.wordList.setObjectName(u"wordList")
         self.verticalLayout_24 = QVBoxLayout(self.wordList)
@@ -1466,7 +1490,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(5)
+        self.stackedWidget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -1521,6 +1545,8 @@ class Ui_MainWindow(object):
         self.closeAppBtn.setToolTip(QCoreApplication.translate("MainWindow", u"Close", None))
 #endif // QT_CONFIG(tooltip)
         self.closeAppBtn.setText("")
+        self.btn_start_learn.setText("")
+        self.btn_start_quiz.setText("")
         self.main_logo.setText("")
         self.pushButton.setText(QCoreApplication.translate("MainWindow", u"\uc218\uc5b4\ud559\uc2b5\ud558\uae30", None))
         self.about_video.setText(QCoreApplication.translate("MainWindow", u"TextLabel about video", None))
@@ -1582,7 +1608,6 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem23.setText(QCoreApplication.translate("MainWindow", u"Line", None));
         self.tableWidget.setSortingEnabled(__sortingEnabled)
 
-        self.label.setText(QCoreApplication.translate("MainWindow", u"NEW PAGE TEST", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"\ud559\uc2b5\uacfc\uc815", None))
         self.hobby_btn.setText("")
         self.character_btn.setText("")

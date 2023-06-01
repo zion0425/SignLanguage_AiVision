@@ -1768,8 +1768,75 @@ p, li { white-space: pre-wrap; }
                       <string notr="true">background: transparent;</string>
                      </property>
                      <property name="currentIndex">
-                      <number>5</number>
+                      <number>0</number>
                      </property>
+                     <widget class="QWidget" name="quiz">
+                      <layout class="QVBoxLayout" name="verticalLayout_20">
+                       <item>
+                        <widget class="QFrame" name="sign_quiz_start">
+                         <property name="styleSheet">
+                          <string notr="true">background-color: rgb(0, 0, 0);</string>
+                         </property>
+                         <property name="frameShape">
+                          <enum>QFrame::StyledPanel</enum>
+                         </property>
+                         <property name="frameShadow">
+                          <enum>QFrame::Raised</enum>
+                         </property>
+                         <layout class="QHBoxLayout" name="horizontalLayout_6">
+                          <item>
+                           <widget class="QPushButton" name="btn_start_learn">
+                            <property name="minimumSize">
+                             <size>
+                              <width>300</width>
+                              <height>300</height>
+                             </size>
+                            </property>
+                            <property name="maximumSize">
+                             <size>
+                              <width>300</width>
+                              <height>300</height>
+                             </size>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">background-image: url(:/images/images/images/learn_sign_logo2.png);
+background-position: center;
+background-repeat: no-repeat;</string>
+                            </property>
+                            <property name="text">
+                             <string/>
+                            </property>
+                           </widget>
+                          </item>
+                          <item>
+                           <widget class="QPushButton" name="btn_start_quiz">
+                            <property name="minimumSize">
+                             <size>
+                              <width>300</width>
+                              <height>300</height>
+                             </size>
+                            </property>
+                            <property name="maximumSize">
+                             <size>
+                              <width>300</width>
+                              <height>300</height>
+                             </size>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">background-image: url(:/images/images/images/sign_quiz_2.png);
+background-position: center;
+background-repeat: no-repeat;</string>
+                            </property>
+                            <property name="text">
+                             <string/>
+                            </property>
+                           </widget>
+                          </item>
+                         </layout>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
                      <widget class="QWidget" name="home">
                       <property name="styleSheet">
                        <string notr="true"/>
@@ -1821,8 +1888,8 @@ background-repeat: no-repeat;</string>
                            <rect>
                             <x>0</x>
                             <y>0</y>
-                            <width>98</width>
-                            <height>28</height>
+                            <width>1086</width>
+                            <height>603</height>
                            </rect>
                           </property>
                           <layout class="QVBoxLayout" name="verticalLayout_23">
@@ -2401,20 +2468,6 @@ background-repeat: no-repeat;</string>
                            </widget>
                           </item>
                          </layout>
-                        </widget>
-                       </item>
-                      </layout>
-                     </widget>
-                     <widget class="QWidget" name="quiz">
-                      <layout class="QVBoxLayout" name="verticalLayout_20">
-                       <item>
-                        <widget class="QLabel" name="label">
-                         <property name="text">
-                          <string>NEW PAGE TEST</string>
-                         </property>
-                         <property name="alignment">
-                          <set>Qt::AlignCenter</set>
-                         </property>
                         </widget>
                        </item>
                       </layout>

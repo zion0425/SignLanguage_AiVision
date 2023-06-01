@@ -122,7 +122,7 @@ class MainWindow(QMainWindow):
         self.videoFileNames = {
             'hobby': ['특기', '물놀이', '테니스', '수영', '노래', '마라톤', '낚시', '야구', '권투', '없다'],
             'character': ['계획적', '똑똑하다', '귀엽다', '고리타분', '수다스럽다', '긍정적', '독특', '조용하다', '솔직하다', '엉뚱'],
-            'family': ['친모', '친부', '여동생', '누나', '오빠', '할머니', '할아버자', '형'],
+            'family': ['친모', '친부', '여동생', '누나', '오빠', '할머니', '할아버지', '형'],
             'birth': ['한국인'],
             'age': ['노인', '어른', '청년', '청소년'],
             'language': ['한국어', '영어', '일본어']
@@ -184,6 +184,7 @@ class MainWindow(QMainWindow):
         widgets.birth_btn.clicked.connect(self.buttonClick)
         widgets.pushButton.clicked.connect(self.buttonClick)
         widgets.pushButton_2.clicked.connect(self.buttonClick)
+        widgets.btn_start_learn.clicked.connect(self.buttonClick)
 
         # EXTRA LEFT BOX
         def openCloseLeftBox():
@@ -215,7 +216,7 @@ class MainWindow(QMainWindow):
 
         # SET HOME PAGE AND SELECT MENU
         # ///////////////////////////////////////////////////////////////
-        widgets.stackedWidget.setCurrentWidget(widgets.home)
+        widgets.stackedWidget.setCurrentWidget(widgets.quiz)
         widgets.btn_home.setStyleSheet(UIFunctions.selectMenu(widgets.btn_home.styleSheet()))
 
     # ///////////////////////////////////////////////////////////////
@@ -228,14 +229,12 @@ class MainWindow(QMainWindow):
 
         # SHOW HOME PAGE
         if btnName == "btn_home":
-            widgets.stackedWidget.setCurrentWidget(widgets.home)
+            widgets.stackedWidget.setCurrentWidget(widgets.quiz)
             UIFunctions.resetStyle(self, btnName)
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
 
-        if btnName == "pushButton":
+        if btnName == "btn_start_learn":
             widgets.stackedWidget.setCurrentWidget(widgets.wordList)
-            UIFunctions.resetStyle(self, btnName)
-            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
 
         # SHOW WIDGETS PAGE
         if btnName == "btn_learn":
