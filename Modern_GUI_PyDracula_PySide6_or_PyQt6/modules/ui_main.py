@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainQtXjQL.ui'
+## Form generated from reading UI file 'mainsLFgvp.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -1377,6 +1377,82 @@ class Ui_MainWindow(object):
         self.sign_word_info.setObjectName(u"sign_word_info")
         self.sign_word_info.setGeometry(QRect(540, 140, 361, 61))
         self.stackedWidget.addWidget(self.dictionary)
+        self.sign_quiz_game = QWidget()
+        self.sign_quiz_game.setObjectName(u"sign_quiz_game")
+        self.horizontalLayout_9 = QHBoxLayout(self.sign_quiz_game)
+        self.horizontalLayout_9.setObjectName(u"horizontalLayout_9")
+        self.frame_2 = QFrame(self.sign_quiz_game)
+        self.frame_2.setObjectName(u"frame_2")
+        self.frame_2.setFrameShape(QFrame.StyledPanel)
+        self.frame_2.setFrameShadow(QFrame.Raised)
+        self.quiz_title = QLabel(self.frame_2)
+        self.quiz_title.setObjectName(u"quiz_title")
+        self.quiz_title.setGeometry(QRect(30, 20, 400, 50))
+        self.quiz_title.setMinimumSize(QSize(400, 50))
+        self.quiz_title.setMaximumSize(QSize(400, 50))
+        self.quiz_title.setStyleSheet(u"background-image: url(:/images/images/images/quiz_title_label.png);")
+        self.inrouduce_phrase = QLabel(self.frame_2)
+        self.inrouduce_phrase.setObjectName(u"inrouduce_phrase")
+        self.inrouduce_phrase.setGeometry(QRect(40, 75, 1001, 91))
+        self.frame_5 = QFrame(self.frame_2)
+        self.frame_5.setObjectName(u"frame_5")
+        self.frame_5.setGeometry(QRect(40, 180, 911, 37))
+        self.frame_5.setFrameShape(QFrame.StyledPanel)
+        self.frame_5.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_10 = QHBoxLayout(self.frame_5)
+        self.horizontalLayout_10.setObjectName(u"horizontalLayout_10")
+        self.hobby_label = QLabel(self.frame_5)
+        self.hobby_label.setObjectName(u"hobby_label")
+
+        self.horizontalLayout_10.addWidget(self.hobby_label)
+
+        self.character_label = QLabel(self.frame_5)
+        self.character_label.setObjectName(u"character_label")
+
+        self.horizontalLayout_10.addWidget(self.character_label)
+
+        self.family_label = QLabel(self.frame_5)
+        self.family_label.setObjectName(u"family_label")
+
+        self.horizontalLayout_10.addWidget(self.family_label)
+
+        self.birth_label = QLabel(self.frame_5)
+        self.birth_label.setObjectName(u"birth_label")
+
+        self.horizontalLayout_10.addWidget(self.birth_label)
+
+        self.age_label = QLabel(self.frame_5)
+        self.age_label.setObjectName(u"age_label")
+
+        self.horizontalLayout_10.addWidget(self.age_label)
+
+        self.lang_label = QLabel(self.frame_5)
+        self.lang_label.setObjectName(u"lang_label")
+
+        self.horizontalLayout_10.addWidget(self.lang_label)
+
+        self.hint_video = QLabel(self.frame_2)
+        self.hint_video.setObjectName(u"hint_video")
+        self.hint_video.setGeometry(QRect(40, 250, 411, 231))
+        self.quiz_webcam = QLabel(self.frame_2)
+        self.quiz_webcam.setObjectName(u"quiz_webcam")
+        self.quiz_webcam.setGeometry(QRect(580, 250, 411, 231))
+        self.btn_refresh = QPushButton(self.frame_2)
+        self.btn_refresh.setObjectName(u"btn_refresh")
+        self.btn_refresh.setGeometry(QRect(900, 30, 150, 30))
+        self.btn_refresh.setMinimumSize(QSize(150, 30))
+        self.btn_refresh.setMaximumSize(QSize(150, 30))
+        self.btn_refresh.setStyleSheet(u"background-image: url(:/images/images/images/refresh_phrase.png)")
+        self.pushButton_4 = QPushButton(self.frame_2)
+        self.pushButton_4.setObjectName(u"pushButton_4")
+        self.pushButton_4.setGeometry(QRect(200, 520, 150, 35))
+        self.pushButton_4.setMinimumSize(QSize(150, 34))
+        self.pushButton_4.setMaximumSize(QSize(150, 30))
+        self.pushButton_4.setStyleSheet(u"background-image: url(:/images/images/images/btn_show_hint.png);")
+
+        self.horizontalLayout_9.addWidget(self.frame_2)
+
+        self.stackedWidget.addWidget(self.sign_quiz_game)
 
         self.verticalLayout_15.addWidget(self.stackedWidget)
 
@@ -1490,7 +1566,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(6)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -1618,6 +1694,18 @@ class Ui_MainWindow(object):
         self.btn_search_sign.setText(QCoreApplication.translate("MainWindow", u"\uac80\uc0c9", None))
         self.label_3.setText("")
         self.sign_word_info.setText(QCoreApplication.translate("MainWindow", u"About Sign Word", None))
+        self.quiz_title.setText("")
+        self.inrouduce_phrase.setText(QCoreApplication.translate("MainWindow", u"\ub098\uc758 \ucde8\ubbf8\ub294 (\ucde8\ubbf8) \uc774\uace0 \ub098\uc758 \uc131\uaca9\uc740 (\uc131\uaca9), \ub098\ub294 (\uac00\uc871\uad00\uacc4)\uc640 \uac19\uc774 \uc0b4\uace0 \ucd9c\uc0dd\uc740 (\ucd9c\uc0dd)\uc774\uc57c \uc9c0\uae08\uc740 (\ub098\uc774\ub300)\uc774\uba70 \ud560 \uc904 \uc544\ub294 \uc5b8\uc5b4\ub294 (\uc5b8\uc5b4)\uc57c!!", None))
+        self.hobby_label.setText(QCoreApplication.translate("MainWindow", u"\ucde8\ubbf8: ", None))
+        self.character_label.setText(QCoreApplication.translate("MainWindow", u"\uc131\uaca9: ", None))
+        self.family_label.setText(QCoreApplication.translate("MainWindow", u"\uac00\uc871\uad00\uacc4: ", None))
+        self.birth_label.setText(QCoreApplication.translate("MainWindow", u"\ucd9c\uc0dd: ", None))
+        self.age_label.setText(QCoreApplication.translate("MainWindow", u"\ub098\uc774\ub300: ", None))
+        self.lang_label.setText(QCoreApplication.translate("MainWindow", u"\uc5b8\uc5b4: ", None))
+        self.hint_video.setText("")
+        self.quiz_webcam.setText("")
+        self.btn_refresh.setText("")
+        self.pushButton_4.setText("")
         self.btn_logout.setText(QCoreApplication.translate("MainWindow", u"Logout", None))
         self.creditsLabel.setText(QCoreApplication.translate("MainWindow", u"ESL - Educate Sign Language", None))
         self.version.setText(QCoreApplication.translate("MainWindow", u"v1.0.3", None))

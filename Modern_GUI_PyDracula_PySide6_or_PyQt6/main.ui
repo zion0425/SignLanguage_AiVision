@@ -1768,7 +1768,7 @@ p, li { white-space: pre-wrap; }
                       <string notr="true">background: transparent;</string>
                      </property>
                      <property name="currentIndex">
-                      <number>0</number>
+                      <number>5</number>
                      </property>
                      <widget class="QWidget" name="quiz">
                       <layout class="QVBoxLayout" name="verticalLayout_20">
@@ -2759,6 +2759,203 @@ background-position: center;</string>
                         <string>About Sign Word</string>
                        </property>
                       </widget>
+                     </widget>
+                     <widget class="QWidget" name="sign_quiz_game">
+                      <layout class="QHBoxLayout" name="horizontalLayout_9">
+                       <item>
+                        <widget class="QFrame" name="frame_2">
+                         <property name="frameShape">
+                          <enum>QFrame::StyledPanel</enum>
+                         </property>
+                         <property name="frameShadow">
+                          <enum>QFrame::Raised</enum>
+                         </property>
+                         <widget class="QLabel" name="quiz_title">
+                          <property name="geometry">
+                           <rect>
+                            <x>30</x>
+                            <y>20</y>
+                            <width>400</width>
+                            <height>50</height>
+                           </rect>
+                          </property>
+                          <property name="minimumSize">
+                           <size>
+                            <width>400</width>
+                            <height>50</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>400</width>
+                            <height>50</height>
+                           </size>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">background-image: url(:/images/images/images/quiz_title_label.png);</string>
+                          </property>
+                          <property name="text">
+                           <string/>
+                          </property>
+                         </widget>
+                         <widget class="QLabel" name="inrouduce_phrase">
+                          <property name="geometry">
+                           <rect>
+                            <x>40</x>
+                            <y>75</y>
+                            <width>1001</width>
+                            <height>91</height>
+                           </rect>
+                          </property>
+                          <property name="text">
+                           <string>나의 취미는 (취미) 이고 나의 성격은 (성격), 나는 (가족관계)와 같이 살고 출생은 (출생)이야 지금은 (나이대)이며 할 줄 아는 언어는 (언어)야!!</string>
+                          </property>
+                         </widget>
+                         <widget class="QFrame" name="frame_5">
+                          <property name="geometry">
+                           <rect>
+                            <x>40</x>
+                            <y>180</y>
+                            <width>911</width>
+                            <height>37</height>
+                           </rect>
+                          </property>
+                          <property name="frameShape">
+                           <enum>QFrame::StyledPanel</enum>
+                          </property>
+                          <property name="frameShadow">
+                           <enum>QFrame::Raised</enum>
+                          </property>
+                          <layout class="QHBoxLayout" name="horizontalLayout_10">
+                           <item>
+                            <widget class="QLabel" name="hobby_label">
+                             <property name="text">
+                              <string>취미: </string>
+                             </property>
+                            </widget>
+                           </item>
+                           <item>
+                            <widget class="QLabel" name="character_label">
+                             <property name="text">
+                              <string>성격: </string>
+                             </property>
+                            </widget>
+                           </item>
+                           <item>
+                            <widget class="QLabel" name="family_label">
+                             <property name="text">
+                              <string>가족관계: </string>
+                             </property>
+                            </widget>
+                           </item>
+                           <item>
+                            <widget class="QLabel" name="birth_label">
+                             <property name="text">
+                              <string>출생: </string>
+                             </property>
+                            </widget>
+                           </item>
+                           <item>
+                            <widget class="QLabel" name="age_label">
+                             <property name="text">
+                              <string>나이대: </string>
+                             </property>
+                            </widget>
+                           </item>
+                           <item>
+                            <widget class="QLabel" name="lang_label">
+                             <property name="text">
+                              <string>언어: </string>
+                             </property>
+                            </widget>
+                           </item>
+                          </layout>
+                         </widget>
+                         <widget class="QLabel" name="hint_video">
+                          <property name="geometry">
+                           <rect>
+                            <x>40</x>
+                            <y>250</y>
+                            <width>411</width>
+                            <height>231</height>
+                           </rect>
+                          </property>
+                          <property name="text">
+                           <string/>
+                          </property>
+                         </widget>
+                         <widget class="QLabel" name="quiz_webcam">
+                          <property name="geometry">
+                           <rect>
+                            <x>580</x>
+                            <y>250</y>
+                            <width>411</width>
+                            <height>231</height>
+                           </rect>
+                          </property>
+                          <property name="text">
+                           <string/>
+                          </property>
+                         </widget>
+                         <widget class="QPushButton" name="btn_refresh">
+                          <property name="geometry">
+                           <rect>
+                            <x>900</x>
+                            <y>30</y>
+                            <width>150</width>
+                            <height>30</height>
+                           </rect>
+                          </property>
+                          <property name="minimumSize">
+                           <size>
+                            <width>150</width>
+                            <height>30</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>150</width>
+                            <height>30</height>
+                           </size>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">background-image: url(:/images/images/images/refresh_phrase.png)</string>
+                          </property>
+                          <property name="text">
+                           <string/>
+                          </property>
+                         </widget>
+                         <widget class="QPushButton" name="pushButton_4">
+                          <property name="geometry">
+                           <rect>
+                            <x>200</x>
+                            <y>520</y>
+                            <width>150</width>
+                            <height>35</height>
+                           </rect>
+                          </property>
+                          <property name="minimumSize">
+                           <size>
+                            <width>150</width>
+                            <height>34</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>150</width>
+                            <height>30</height>
+                           </size>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">background-image: url(:/images/images/images/btn_show_hint.png);</string>
+                          </property>
+                          <property name="text">
+                           <string/>
+                          </property>
+                         </widget>
+                        </widget>
+                       </item>
+                      </layout>
                      </widget>
                     </widget>
                    </item>

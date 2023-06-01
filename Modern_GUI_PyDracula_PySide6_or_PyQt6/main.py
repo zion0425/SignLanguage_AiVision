@@ -187,6 +187,7 @@ class MainWindow(QMainWindow):
         widgets.pushButton.clicked.connect(self.buttonClick)
         widgets.pushButton_2.clicked.connect(self.buttonClick)
         widgets.btn_start_learn.clicked.connect(self.buttonClick)
+        widgets.btn_start_quiz.clicked.connect(self.buttonClick)
 
         # EXTRA LEFT BOX
         def openCloseLeftBox():
@@ -238,6 +239,9 @@ class MainWindow(QMainWindow):
         if btnName == "btn_start_learn":
             widgets.stackedWidget.setCurrentWidget(widgets.wordList)
 
+        if btnName == "btn_start_quiz":
+            widgets.stackedWidget.setCurrentWidget(widgets.sign_quiz_game)
+
         # SHOW WIDGETS PAGE
         if btnName == "btn_learn":
             widgets.stackedWidget.setCurrentWidget(widgets.wordList)
@@ -246,7 +250,7 @@ class MainWindow(QMainWindow):
 
         # SHOW NEW PAGE
         if btnName == "btn_quiz":
-            widgets.stackedWidget.setCurrentWidget(widgets.quiz) # SET PAGE
+            widgets.stackedWidget.setCurrentWidget(widgets.sign_quiz_game) # SET PAGE
             UIFunctions.resetStyle(self, btnName) # RESET ANOTHERS BUTTONS SELECTED
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet())) # SELECT MENU
 
