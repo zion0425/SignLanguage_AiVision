@@ -104,6 +104,8 @@ class MainWindow(QMainWindow):
         self.vid_thread = VideoThread()
         self.setVideoName(videoName)
         widgets.about_video.setText(videoName)
+        widgets.about_video.setStyleSheet("font-size: 25px;")
+
         self.vid_thread.setVideoPath(self.current_dir + self.prefix + self.videoName + self.suffix)
         self.webcam_thread.setCurrentVdiName(videoName)
         self.vid_thread.change_pixmap_signal.connect(self.update_vid_image)
@@ -120,9 +122,9 @@ class MainWindow(QMainWindow):
 
         # //////////////// 비디오 이름 세팅 ///////////////////////
         self.videoFileNames = {
-            'hobby': ['특기', '물놀이', '테니스', '수영', '노래', '마라톤', '낚시', '야구', '권투', '없다'],
+            'hobby': ['노래', '특기', '물놀이', '테니스', '수영', '마라톤', '낚시', '야구', '권투', '없다'],
             'character': ['계획적', '똑똑하다', '귀엽다', '고리타분', '수다스럽다', '긍정적', '독특', '조용하다', '솔직하다', '엉뚱'],
-            'family': ['친모', '친부', '여동생', '누나', '오빠', '할머니', '할아버지', '형'],
+            'family': ['친모', '친부', '여동생', '할아버지', '오빠', '할머니', '누나', '형'],
             'birth': ['한국인'],
             'age': ['노인', '어른', '청년', '청소년'],
             'language': ['한국어', '영어', '일본어']
@@ -262,8 +264,15 @@ class MainWindow(QMainWindow):
             self.userLearnCnt -= 1
             if self.userLearnCnt < 0 :
                 print("finished")
+                widgets.stackedWidget.setCurrentWidget(widgets.wordList)
+                UIFunctions.resetStyle(self, btnName)
+                btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
+                self.stopThreadds()
+                return
             widgets.pushButton_2.setEnabled(False)
-            widgets.about_webcam.setText("")
+            widgets.pushButton_2.setStyleSheet("background-color: #ffffff;")
+            # self.widgets.pushButton_2.setGeometry(QRect(350, 430, 411, 51))
+            widgets.pushButton_2.setStyleSheet(u"font-size: 32px;")
             self.webcam_thread.setCorrectCnt(0)
             self.currentVideoName = self.videoFileNames.get(self.currentCategory)[self.userLearnCnt]
             self.webcam_thread.setCurrentVdiName(self.currentVideoName)
