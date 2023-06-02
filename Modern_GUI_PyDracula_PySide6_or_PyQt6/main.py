@@ -40,6 +40,8 @@ os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 # ///////////////////////////////////////////////////////////////
 widgets = None
 dic = ''
+quiz = ''
+
 class MainWindow(QMainWindow):
     current_dir = os.path.abspath(os.path.dirname(__file__))
     prefix = '/videos/'
@@ -245,8 +247,13 @@ class MainWindow(QMainWindow):
         if btnName == "btn_start_learn":
             widgets.stackedWidget.setCurrentWidget(widgets.wordList)
 
+        # 수어 퀴즈 버튼 클릭시,
         if btnName == "btn_start_quiz":
             widgets.stackedWidget.setCurrentWidget(widgets.sign_quiz_game)
+            # quiz.set_random_action()
+            # quiz.start_quiz()
+            # quiz.
+
 
         # SHOW WIDGETS PAGE
         if btnName == "btn_learn":
@@ -329,6 +336,11 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     app.setWindowIcon(QIcon("images/images/ESL_logo_small2.ico"))
     window = MainWindow()
+
+    # 사전 객체 로딩
     dic = Dictionary(widgets)
+
+    # 수어 퀴즈 객체 로딩
+    # quiz = Quiz(widgets)
 
     sys.exit(app.exec())

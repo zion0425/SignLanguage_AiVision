@@ -2,12 +2,10 @@ import os
 
 import cv2
 import numpy as np
-from PySide6 import QtGui, QtCore
+from PySide6 import QtGui
 from PySide6.QtCore import QStringListModel, Slot, QSortFilterProxyModel
 from PySide6.QtGui import QPixmap
-from PySide6.QtMultimedia import QMediaPlayer
-from PySide6.QtMultimediaWidgets import QVideoWidget
-from PySide6.QtWidgets import QAbstractItemView, QVBoxLayout
+from PySide6.QtWidgets import QAbstractItemView
 
 from Modern_GUI_PyDracula_PySide6_or_PyQt6.video_thread import VideoThread
 
