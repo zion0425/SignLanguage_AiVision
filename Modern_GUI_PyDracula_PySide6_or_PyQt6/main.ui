@@ -1768,7 +1768,7 @@ p, li { white-space: pre-wrap; }
                       <string notr="true">background: transparent;</string>
                      </property>
                      <property name="currentIndex">
-                      <number>5</number>
+                      <number>6</number>
                      </property>
                      <widget class="QWidget" name="quiz">
                       <layout class="QVBoxLayout" name="verticalLayout_20">
@@ -1922,7 +1922,7 @@ background-repeat: no-repeat;</string>
                                 <x>70</x>
                                 <y>350</y>
                                 <width>391</width>
-                                <height>41</height>
+                                <height>111</height>
                                </rect>
                               </property>
                               <property name="text">
@@ -1935,7 +1935,7 @@ background-repeat: no-repeat;</string>
                                 <x>620</x>
                                 <y>350</y>
                                 <width>391</width>
-                                <height>41</height>
+                                <height>111</height>
                                </rect>
                               </property>
                               <property name="text">
@@ -1946,7 +1946,7 @@ background-repeat: no-repeat;</string>
                               <property name="geometry">
                                <rect>
                                 <x>350</x>
-                                <y>430</y>
+                                <y>490</y>
                                 <width>411</width>
                                 <height>51</height>
                                </rect>
@@ -2685,7 +2685,7 @@ background-position: center;</string>
                       <widget class="QLineEdit" name="search_sign">
                        <property name="geometry">
                         <rect>
-                         <x>30</x>
+                         <x>310</x>
                          <y>30</y>
                          <width>251</width>
                          <height>31</height>
@@ -2695,7 +2695,7 @@ background-position: center;</string>
                       <widget class="QPushButton" name="btn_search_sign">
                        <property name="geometry">
                         <rect>
-                         <x>310</x>
+                         <x>590</x>
                          <y>30</y>
                          <width>111</width>
                          <height>31</height>
@@ -2758,6 +2758,9 @@ background-position: center;</string>
                        <property name="text">
                         <string>About Sign Word</string>
                        </property>
+                       <property name="alignment">
+                        <set>Qt::AlignCenter</set>
+                       </property>
                       </widget>
                      </widget>
                      <widget class="QWidget" name="sign_quiz_game">
@@ -2804,74 +2807,26 @@ background-position: center;</string>
                             <x>40</x>
                             <y>75</y>
                             <width>1001</width>
-                            <height>91</height>
+                            <height>61</height>
                            </rect>
+                          </property>
+                          <property name="font">
+                           <font>
+                            <family>Segoe UI</family>
+                            <pointsize>-1</pointsize>
+                            <weight>50</weight>
+                            <italic>false</italic>
+                            <bold>false</bold>
+                           </font>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">font-size: 22px;</string>
                           </property>
                           <property name="text">
-                           <string>나의 취미는 (취미) 이고 나의 성격은 (성격), 나는 (가족관계)와 같이 살고 출생은 (출생)이야 지금은 (나이대)이며 할 줄 아는 언어는 (언어)야!!</string>
+                           <string>내 취미는 (___)이며, (___) 성격을 가졌으며, (___) 가족관계를 가지고 있습니다.</string>
                           </property>
                          </widget>
-                         <widget class="QFrame" name="frame_5">
-                          <property name="geometry">
-                           <rect>
-                            <x>40</x>
-                            <y>180</y>
-                            <width>911</width>
-                            <height>37</height>
-                           </rect>
-                          </property>
-                          <property name="frameShape">
-                           <enum>QFrame::StyledPanel</enum>
-                          </property>
-                          <property name="frameShadow">
-                           <enum>QFrame::Raised</enum>
-                          </property>
-                          <layout class="QHBoxLayout" name="horizontalLayout_10">
-                           <item>
-                            <widget class="QLabel" name="hobby_label">
-                             <property name="text">
-                              <string>취미: </string>
-                             </property>
-                            </widget>
-                           </item>
-                           <item>
-                            <widget class="QLabel" name="character_label">
-                             <property name="text">
-                              <string>성격: </string>
-                             </property>
-                            </widget>
-                           </item>
-                           <item>
-                            <widget class="QLabel" name="family_label">
-                             <property name="text">
-                              <string>가족관계: </string>
-                             </property>
-                            </widget>
-                           </item>
-                           <item>
-                            <widget class="QLabel" name="birth_label">
-                             <property name="text">
-                              <string>출생: </string>
-                             </property>
-                            </widget>
-                           </item>
-                           <item>
-                            <widget class="QLabel" name="age_label">
-                             <property name="text">
-                              <string>나이대: </string>
-                             </property>
-                            </widget>
-                           </item>
-                           <item>
-                            <widget class="QLabel" name="lang_label">
-                             <property name="text">
-                              <string>언어: </string>
-                             </property>
-                            </widget>
-                           </item>
-                          </layout>
-                         </widget>
-                         <widget class="QLabel" name="hint_video">
+                         <widget class="QLabel" name="quiz_webcam">
                           <property name="geometry">
                            <rect>
                             <x>40</x>
@@ -2884,7 +2839,7 @@ background-position: center;</string>
                            <string/>
                           </property>
                          </widget>
-                         <widget class="QLabel" name="quiz_webcam">
+                         <widget class="QLabel" name="hint_video">
                           <property name="geometry">
                            <rect>
                             <x>580</x>
@@ -2925,13 +2880,13 @@ background-position: center;</string>
                            <string/>
                           </property>
                          </widget>
-                         <widget class="QPushButton" name="pushButton_4">
+                         <widget class="QPushButton" name="btn_show_hint">
                           <property name="geometry">
                            <rect>
-                            <x>200</x>
+                            <x>710</x>
                             <y>520</y>
                             <width>150</width>
-                            <height>35</height>
+                            <height>34</height>
                            </rect>
                           </property>
                           <property name="minimumSize">
@@ -2951,6 +2906,44 @@ background-position: center;</string>
                           </property>
                           <property name="text">
                            <string/>
+                          </property>
+                         </widget>
+                         <widget class="QLabel" name="inrouduce_phrase_2">
+                          <property name="geometry">
+                           <rect>
+                            <x>40</x>
+                            <y>190</y>
+                            <width>991</width>
+                            <height>51</height>
+                           </rect>
+                          </property>
+                          <property name="font">
+                           <font>
+                            <family>Segoe UI</family>
+                            <pointsize>-1</pointsize>
+                            <weight>50</weight>
+                            <italic>false</italic>
+                            <bold>false</bold>
+                           </font>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">font-size: 22px;</string>
+                          </property>
+                          <property name="text">
+                           <string>취미: </string>
+                          </property>
+                         </widget>
+                         <widget class="QLabel" name="label_about_game">
+                          <property name="geometry">
+                           <rect>
+                            <x>40</x>
+                            <y>160</y>
+                            <width>761</width>
+                            <height>16</height>
+                           </rect>
+                          </property>
+                          <property name="text">
+                           <string>수어로 표현함으로 위 문장을 완성시킵니다. 아래 주어진 단어를 손동작을 이용하여 최대한 정확하게 표현해 보세요.</string>
                           </property>
                          </widget>
                         </widget>
