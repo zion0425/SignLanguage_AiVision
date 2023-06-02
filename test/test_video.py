@@ -15,7 +15,6 @@ class App(QMainWindow):
 
 
 
-
     def closeEvent(self, event):
         self.vid_thread.stop()
         self.webcam_thread.stop()

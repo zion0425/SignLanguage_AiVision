@@ -47,13 +47,16 @@ class Dictionary():
         if self.isRun:
             self.vid_thread.stop()
         self.initVideo(self.videoName, self.widgets.label_3)
-        self.start()
+        self.startVideo()
     def reloadingVdi(self, vName):
         self.videoName = self.current_dir + self.prefix + vName + self.suffix
         self.initVideo(self.videoName, self.widgets.sign_word_info)
-        self.start()
+        self.startVideo()
+    def stopVideo(self):
+        self.isRun = False
+        self.vid_thread.stop()
 
-    def start(self):
+    def startVideo(self):
         self.isRun = True
         self.vid_thread.start()
     def filter_items(self):
