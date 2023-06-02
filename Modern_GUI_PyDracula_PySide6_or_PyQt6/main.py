@@ -23,6 +23,7 @@ import sys
 import os
 import platform
 from Modern_GUI_PyDracula_PySide6_or_PyQt6.dictionary import Dictionary
+from Modern_GUI_PyDracula_PySide6_or_PyQt6.quiz import Quiz
 from Modern_GUI_PyDracula_PySide6_or_PyQt6.video_thread import VideoThread
 from Modern_GUI_PyDracula_PySide6_or_PyQt6.web_cam_thread import WebCamThread
 import dictionary
@@ -250,6 +251,7 @@ class MainWindow(QMainWindow):
         # 수어 퀴즈 버튼 클릭시,
         if btnName == "btn_start_quiz":
             widgets.stackedWidget.setCurrentWidget(widgets.sign_quiz_game)
+            quiz.startQuiz()
             # quiz.set_random_action()
             # quiz.start_quiz()
             # quiz.
@@ -266,6 +268,7 @@ class MainWindow(QMainWindow):
             widgets.stackedWidget.setCurrentWidget(widgets.sign_quiz_game) # SET PAGE
             UIFunctions.resetStyle(self, btnName) # RESET ANOTHERS BUTTONS SELECTED
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet())) # SELECT MENU
+            quiz.startQuiz()
 
         if btnName == "btn_wordList":
             widgets.stackedWidget.setCurrentWidget(widgets.dic)  # SET PAGE
@@ -341,6 +344,6 @@ if __name__ == "__main__":
     dic = Dictionary(widgets)
 
     # 수어 퀴즈 객체 로딩
-    # quiz = Quiz(widgets)
+    quiz = Quiz(widgets)
 
     sys.exit(app.exec())
