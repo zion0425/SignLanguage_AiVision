@@ -39,7 +39,7 @@ os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 # SET AS GLOBAL WIDGETS
 # ///////////////////////////////////////////////////////////////
 widgets = None
-
+dic = ''
 class MainWindow(QMainWindow):
     current_dir = os.path.abspath(os.path.dirname(__file__))
     prefix = '/videos/'
@@ -231,6 +231,10 @@ class MainWindow(QMainWindow):
         btnName = btn.objectName()
         if btnName != "btn_learn" and btnName != "pushButton_2":
             self.stopThreadds()
+
+        if btnName != "btn_dictionary":
+            if dic.isRun:
+                dic.stopVideo()
 
         # SHOW HOME PAGE
         if btnName == "btn_home":
