@@ -21,10 +21,8 @@ class Quiz():
         self.widgets = widgets
         self.actions = {
             'hobby': ['물놀이', '수영', '마라톤', '낚시', '야구', '권투', '없다'],
-            # 'hobby': ['없다'],
-            # 'character': ['계획적', '똑똑하다', '귀엽다', '고리타분', '수다스럽다', '긍정적', '독특', '조용하다', '솔직하다', '엉뚱'],
-            'character': ['긍정적', '솔직하다'],
-            'family': ['친모', '친부', '여동생','오빠', '누나', '형'],
+            'character': ['긍정적', '조용하다', '솔직하다', '엉뚱', '계획적'],
+            'family': ['오빠',  '형'],
         }
 
         # Register(Connect) btnEvent
@@ -34,18 +32,25 @@ class Quiz():
         self.sign_video = widgets.hint_video
         self.webcam = widgets.quiz_webcam
 
-        self.setVideo()
-
-        # 객체 생성시 랜덤 액션, 현재 학습 정보 세팅
-        self.setRandomAction()
-        self.setCurrentAction('hobby')
-        self.setCam()
+        # self.setVideo()
+        #
+        # # 객체 생성시 랜덤 액션, 현재 학습 정보 세팅
+        # self.setRandomAction()
+        # self.setCurrentAction('hobby')
+        # self.setCam()
 
         self.text = self.widgets.label_about_game.text()
         self.current_text_index = 0
         self.interval = 100 # 글자 간의 표시되는 간격을 조절하기 위한 시간 간격 (밀리초 단위)
 
+
     def startQuiz(self):
+        self.setVideo()
+        # 객체 생성시 랜덤 액션, 현재 학습 정보 세팅
+        self.setRandomAction()
+        self.setCurrentAction('hobby')
+        self.setCam()
+        self.widgets.inrouduce_phrase_2.setText('')
         self.quiz_thread.start()
         self.quiz_thread.category = 'hobby'
         self.quiz_thread.setActionNames(self.randomActions)
@@ -54,8 +59,9 @@ class Quiz():
         self.timer = QTimer()
         self.timer.timeout.connect(self.update_label)
         self.timer.start(self.interval)
-        self.sign_video.setVisible(True)
+        self.sign_video.setVisible(False)
         self.webcam.setVisible(True)
+        self.widgets.btn_refresh.Enabled = True
 
     def reloadText(self):
         self.widgets.inrouduce_phrase.setText("내 취미는 "
@@ -69,6 +75,7 @@ class Quiz():
 
     def exitQuiz(self):
         self.isRun = False
+        self.widgets.btn_refresh.Enabled = False
         self.vid_thread.stop()
         self.quiz_thread.stop()
         self.sign_video.setVisible(False)
@@ -99,19 +106,20 @@ class Quiz():
         self.quiz_thread.setActionNames(self.randomActions)
         self.quiz_thread.currentVdiName= self.randomActions['hobby']
         self.reloadText()
-        self.showVideo()
+        self.setVideo()
+        self.sign_video.setVisible(False)
 
     def nextStep(self):
         if self.quiz_thread.category == 'hobby':
             self.setCurrentAction('character')
             self.quiz_thread.category = 'character'
             # self.quiz_thread.setActionNames(self.randomActions)
-            self.showVideo()
+            self.setVideo()
         elif self.quiz_thread.category == 'character':
             self.setCurrentAction('family')
             self.quiz_thread.category = 'family'
             # self.quiz_thread.setActionNames(self.randomActions)
-            self.showVideo()
+            self.setVideo()
         else:
             self.exitQuiz()
 
