@@ -127,7 +127,7 @@ class MainWindow(QMainWindow):
 
         # //////////////// 비디오 이름 세팅 ///////////////////////
         self.videoFileNames = {
-            'hobby': ['노래', '특기', '물놀이', '테니스', '수영', '마라톤', '낚시', '야구', '권투', '없다'],
+            'hobby': ['물놀이', '수영', '마라톤', '낚시', '야구', '권투', '없다'],
             'character': ['계획적', '똑똑하다', '귀엽다', '고리타분', '수다스럽다', '긍정적', '독특', '조용하다', '솔직하다', '엉뚱'],
             'family': ['친모', '친부', '여동생', '할아버지', '오빠', '할머니', '누나', '형'],
             'birth': ['한국인'],
@@ -239,6 +239,10 @@ class MainWindow(QMainWindow):
             if dic.isRun:
                 dic.stopVideo()
 
+        if btnName != "btn_quiz" or btnName != "btn_start_quiz":
+            if quiz.isRun:
+                quiz.exitQuiz()
+
         # SHOW HOME PAGE
         if btnName == "btn_home":
             widgets.stackedWidget.setCurrentWidget(widgets.quiz)
@@ -252,10 +256,6 @@ class MainWindow(QMainWindow):
         if btnName == "btn_start_quiz":
             widgets.stackedWidget.setCurrentWidget(widgets.sign_quiz_game)
             quiz.startQuiz()
-            # quiz.set_random_action()
-            # quiz.start_quiz()
-            # quiz.
-
 
         # SHOW WIDGETS PAGE
         if btnName == "btn_learn":

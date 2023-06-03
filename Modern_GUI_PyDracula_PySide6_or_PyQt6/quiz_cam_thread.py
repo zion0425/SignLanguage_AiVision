@@ -7,6 +7,7 @@ import cv2
 import time
 import os
 
+from Modern_GUI_PyDracula_PySide6_or_PyQt6.video_thread import VideoThread
 
 #2차원 배열로 key : vdiName , value : vdiUrl
 actions = ['일본어', '솔직하다', '오빠', '할아버지', '어른', '물놀이', '고리타분', '마라톤', '테니스', '영어', '조용하다', '수영', '특기', '형', '낚시', '똑똑하다', '수다스럽다', '노인', '청소년', '할머니', '청년', '계획적', '귀엽다', '야구', '친부', '독특', '친모', '긍정적', '누나', '한국인', '엉뚱', '없다', '권투', '여동생', '노래', '한국어']
@@ -28,10 +29,50 @@ hands = mp_hands.Hands(
 fontpath = "/Library/Fonts/NanumGothic.ttf"
 font = ImageFont.truetype(fontpath,40, encoding='unic')
 
-class VideoThread(QThread):
+
+
+class QuizThread(QThread):
+    current_dir =  os.path.abspath(os.path.dirname(__file__))
+    prefix = current_dir + '/videos/'
+    suffix = '.mp4'
     change_pixmap_signal = Signal(np.ndarray)
     user_action = ''
     currentVdiName = ''
+    updateIntroducePhraseSignal = Signal(str)
+    category = ''
+    actionNames = []
+    strs = ['','','']
+
+    def setActionNames(self, actionNames):
+        self.actionNames = actionNames
+        # self.setStrs()
+    def setStrs(self):
+        if self.category == 'hobby':
+            self.strs[1] = " 성격은 <span style='color:red; text-decoration: underline;'>(" + self.actionNames[
+                'character'] + ")</span>"
+        if self.actionNames['family'] == '형' or self.actionNames['family'] == '여동생':
+            self.strs[2] = " 가족은 <span style='color:red; text-decoration: underline;'>(" + self.actionNames[
+            'family'] + ")</span>이 있습니다."
+        else:
+            self.strs[2] = " 가족은 <span style='color:red; text-decoration: underline;'>(" + self.actionNames[
+                'family'] + ")</span>가 있습니다."
+    @Slot(str)
+    def updateIntroducePhrase(self, action):
+        self.setStrs()
+        if self.category == 'hobby':
+            if action == '없다':
+                self.strs[0] = "내 취미는 <span style='color:green; text-decoration: underline;'>(" + action + ")</span>. "
+            else:
+                self.strs[0] = "내 취미는 <span style='color:green; text-decoration: underline;'>(" + action + ")</span>이며, "
+        elif self.category == 'character':
+            self.strs[1] = "성격은 <span style='color:green; text-decoration: underline;'>(" + action + ")</span>. "
+        elif self.category == 'family':
+            if action == '형' or action == '여동생':
+                self.strs[2] = " 가족은 <span style='color:green; text-decoration: underline;'>(" + action + ")</span>이 있습니다."
+            else:
+                self.strs[2] = " 가족은 <span style='color:green; text-decoration: underline;'>(" + action + ")</span>가 있습니다."
+        self.widgets.inrouduce_phrase.setText(self.strs[0] + self.strs[1] + self.strs[2])
+        self.widgets.inrouduce_phrase.setOpenExternalLinks(True)
 
     def setCurrentVdiName(self, vdiName):
         self.currentVdiName = vdiName
@@ -45,10 +86,24 @@ class VideoThread(QThread):
         image = np.array(img_pil)
         return image
 
-    def __init__(self, widgets):
+    def __init__(self, widgets, nextStep):
         super().__init__()
         self._run_flag = True
         self.widgets = widgets
+        self.updateIntroducePhraseSignal.connect(self.updateIntroducePhrase)
+        self.nextStep = nextStep
+
+    def next(self):
+        if self.category == 'hobby':
+            self.currentVdiName = self.actionNames['character']
+            self.nextStep()
+        elif self.category == 'character':
+            self.currentVdiName = self.actionNames['family']
+            self.nextStep()
+        else :
+            self.widgets.inrouduce_phrase_2.setText("축하드립니다. 성공적으로 문장을 완성했습니다!")
+            self.widgets.inrouduce_phrase_2.setStyleSheet("font-size: 20px; color: green;")
+            self.nextStep()
 
     def run(self):
         cap = cv2.VideoCapture(0)
@@ -115,13 +170,17 @@ class VideoThread(QThread):
                                 action_start_time = time.time()
                             elif time.time() - action_start_time >= 3:
                                 if action == self.currentVdiName:
-                                    # Change UI logic
-                                    # self.widgets.pushButton_2.setEnabled(True)
-                                    # self.widgets.pushButton_2.setStyleSheet("background-color: #4CAF50; ufont-size: 32px;")
+                                    # GUI 요소 갱신을 위한 신호 발생
+                                    self.widgets.inrouduce_phrase_2.setText(self.category + " : " + action)
+                                    self.widgets.inrouduce_phrase_2.setStyleSheet("font-size: 20px; color: green;")
+                                    self.updateIntroducePhraseSignal.emit(action)
+                                    time.sleep(1)
+                                    self.next()
+                                    time.sleep(1)
 
-                                    action = ""
-                                self.widgets.about_webcam.setText("인식 동작 : " + action)
-                                self.widgets.about_webcam.setStyleSheet("font-size: 20px;")
+                                else:
+                                    self.widgets.inrouduce_phrase_2.setText(self.category + " : " + action)
+                                    self.widgets.inrouduce_phrase_2.setStyleSheet("font-size: 20px; color: red;")
                                 action_start_time = None
 
                         # Put Korean text
@@ -144,3 +203,4 @@ class VideoThread(QThread):
 
     def getAction(self):
         return self.user_action
+
