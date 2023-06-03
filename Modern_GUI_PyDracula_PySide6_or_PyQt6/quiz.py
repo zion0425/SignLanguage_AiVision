@@ -41,6 +41,10 @@ class Quiz():
         self.setCurrentAction('hobby')
         self.setCam()
 
+        self.text = self.widgets.label_about_game.text()
+        self.current_text_index = 0
+        self.interval = 100 # 글자 간의 표시되는 간격을 조절하기 위한 시간 간격 (밀리초 단위)
+
     def startQuiz(self):
         self.quiz_thread.start()
         self.quiz_thread.category = 'hobby'
@@ -62,6 +66,9 @@ class Quiz():
         self.isRun = False
         self.vid_thread.stop()
         self.quiz_thread.stop()
+        self.timer = QTimer()
+        self.timer.timeout.connect(self.update_label)
+        self.timer.start(self.interval)
 
     # 현재 학습 정보(비디오 이름) 저장
     def setCurrentAction(self, learnActionCategory):
@@ -152,15 +159,6 @@ class Quiz():
         convert_to_Qt_format = QtGui.QImage(rgb_image.data, w, h, bytes_per_line, QtGui.QImage.Format_RGB888)
         p = QPixmap.fromImage(convert_to_Qt_format)
         return p
-
-        self.text = self.widgets.label_about_game.text()
-        self.current_text_index = 0
-        self.interval = 100 # 글자 간의 표시되는 간격을 조절하기 위한 시간 간격 (밀리초 단위)
-
-    def startQuiz(self):
-        self.timer = QTimer()
-        self.timer.timeout.connect(self.update_label)
-        self.timer.start(self.interval)
 
     def update_label(self):
         if self.current_text_index < len(self.text):
