@@ -41,9 +41,9 @@ class Quiz():
         self.setCurrentAction('hobby')
         self.setCam()
 
-        # self.text = self.widgets.label_about_game.text()
-        # self.current_text_index = 0
-        # self.interval = 100 # 글자 간의 표시되는 간격을 조절하기 위한 시간 간격 (밀리초 단위)
+        self.text = self.widgets.label_about_game.text()
+        self.current_text_index = 0
+        self.interval = 100 # 글자 간의 표시되는 간격을 조절하기 위한 시간 간격 (밀리초 단위)
 
     def startQuiz(self):
         self.quiz_thread.start()
