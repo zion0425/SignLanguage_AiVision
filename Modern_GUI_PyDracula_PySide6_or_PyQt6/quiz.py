@@ -21,10 +21,8 @@ class Quiz():
         self.widgets = widgets
         self.actions = {
             'hobby': ['물놀이', '수영', '마라톤', '낚시', '야구', '권투', '없다'],
-            # 'hobby': ['없다'],
-            # 'character': ['계획적', '똑똑하다', '귀엽다', '고리타분', '수다스럽다', '긍정적', '독특', '조용하다', '솔직하다', '엉뚱'],
-            'character': ['계획적', '똑똑하다',  '고리타분', '수다스럽다', '긍정적', '독특', '조용하다', '솔직하다'],
-            'family': ['친모', '친부', '여동생','오빠', '누나', '형'],
+            'character': ['긍정적', '조용하다', '솔직하다', '엉뚱', '계획적'],
+            'family': ['오빠',  '형'],
         }
 
         # Register(Connect) btnEvent
@@ -51,13 +49,18 @@ class Quiz():
         self.quiz_thread.setActionNames(self.randomActions)
         self.quiz_thread.setStrs()
         self.reloadText()
+        self.timer = QTimer()
+        self.timer.timeout.connect(self.update_label)
+        self.timer.start(self.interval)
+        self.sign_video.setVisible(True)
+        self.webcam.setVisible(True)
 
     def reloadText(self):
         self.widgets.inrouduce_phrase.setText("내 취미는 "
                                               "<span style='color:red; text-decoration: underline;'>(" +
                                               self.randomActions['hobby'] + ")</span> 이며,"
                                                                             " 성격은 <span style='color:red; text-decoration: underline;'>(" +
-                                              self.randomActions['character'] + ")</span>."
+                                              self.randomActions['character'] + ")</span>,"
                                                                                 " 가족은 <span style='color:red; text-decoration: underline;'>(" +
                                               self.randomActions['family'] + ")</span>(이/가) 있습니다.")
         self.widgets.inrouduce_phrase.setOpenExternalLinks(True)
@@ -66,9 +69,9 @@ class Quiz():
         self.isRun = False
         self.vid_thread.stop()
         self.quiz_thread.stop()
-        self.timer = QTimer()
-        self.timer.timeout.connect(self.update_label)
-        self.timer.start(self.interval)
+        self.sign_video.setVisible(False)
+        self.webcam.setVisible(False)
+
 
     # 현재 학습 정보(비디오 이름) 저장
     def setCurrentAction(self, learnActionCategory):
