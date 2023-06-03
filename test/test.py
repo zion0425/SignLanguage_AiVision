@@ -6,7 +6,7 @@ from PIL import ImageFont, ImageDraw, Image
 from pathlib import Path
 
 actions = []
-video_file_path = '../Modern_GUI_PyDracula_PySide6_or_PyQt6/videos'
+video_file_path = '../ESL/videos'
 for file in Path(video_file_path).iterdir():
     print(file.stem)
     actions.append(file.stem)
@@ -14,7 +14,7 @@ for file in Path(video_file_path).iterdir():
 print(actions)
 seq_length = 30
 
-model = load_model('../Modern_GUI_PyDracula_PySide6_or_PyQt6/models/fourth_model.h5')
+model = load_model('../ESL/models/fourth_model.h5')
 # MediaPipe hands model
 mp_hands = mp.solutions.hands
 mp_drawing = mp.solutions.drawing_utils

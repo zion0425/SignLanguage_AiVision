@@ -6,8 +6,8 @@ import cv2
 from PySide6.QtCore import  Slot, QFile
 import numpy as np
 from PySide6.QtUiTools import QUiLoader
-from Modern_GUI_PyDracula_PySide6_or_PyQt6.video_thread import VideoThread
-from Modern_GUI_PyDracula_PySide6_or_PyQt6.web_cam_thread import WebCamThread
+from ESL.video_thread import VideoThread
+from ESL.web_cam_thread import WebCamThread
 
 class App(QMainWindow):
     def __init__(self):
