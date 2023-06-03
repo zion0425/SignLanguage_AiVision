@@ -22,17 +22,17 @@ import numpy as np
 import sys
 import os
 import platform
-from Modern_GUI_PyDracula_PySide6_or_PyQt6.dictionary import Dictionary
-from Modern_GUI_PyDracula_PySide6_or_PyQt6.quiz import Quiz
-from Modern_GUI_PyDracula_PySide6_or_PyQt6.video_thread import VideoThread
-from Modern_GUI_PyDracula_PySide6_or_PyQt6.web_cam_thread import WebCamThread
+from ESL.dictionary import Dictionary
+from ESL.quiz import Quiz
+from ESL.video_thread import VideoThread
+from ESL.web_cam_thread import WebCamThread
 import dictionary
 
 
-# from Modern_GUI_PyDracula_PySide6_or_PyQt6.vdi_cam import Vdi_Cam
+# from ESL.vdi_cam import Vdi_Cam
 # IMPORT / GUI AND MODULES AND WIDGETS
 # ///////////////////////////////////////////////////////////////
-# from Modern_GUI_PyDracula_PySide6_or_PyQt6.modules import *
+# from ESL.modules import *
 from modules import *
 from widgets import *
 os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%

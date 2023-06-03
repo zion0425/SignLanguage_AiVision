@@ -7,8 +7,8 @@ from PySide6 import QtGui, QtCore
 from PySide6.QtCore import QStringListModel, Slot, QSortFilterProxyModel, QTimer
 from PySide6.QtGui import QPixmap
 
-from Modern_GUI_PyDracula_PySide6_or_PyQt6.quiz_cam_thread import QuizThread
-from Modern_GUI_PyDracula_PySide6_or_PyQt6.video_thread import VideoThread
+from ESL.quiz_cam_thread import QuizThread
+from ESL.video_thread import VideoThread
 
 class Quiz():
     current_dir = os.path.abspath(os.path.dirname(__file__))
@@ -61,7 +61,7 @@ class Quiz():
         self.timer.start(self.interval)
         self.sign_video.setVisible(False)
         self.webcam.setVisible(True)
-        self.widgets.btn_refresh.Enabled = True
+        self.widgets.btn_refresh.setEnabled(True)
 
     def reloadText(self):
         self.widgets.inrouduce_phrase.setText("내 취미는 "
@@ -75,7 +75,7 @@ class Quiz():
 
     def exitQuiz(self):
         self.isRun = False
-        self.widgets.btn_refresh.Enabled = False
+        self.widgets.btn_refresh.setEnabled(False)
         self.vid_thread.stop()
         self.quiz_thread.stop()
         self.sign_video.setVisible(False)

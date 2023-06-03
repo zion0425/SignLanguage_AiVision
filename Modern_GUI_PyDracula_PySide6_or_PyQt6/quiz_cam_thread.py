@@ -7,7 +7,7 @@ import cv2
 import time
 import os
 
-from Modern_GUI_PyDracula_PySide6_or_PyQt6.video_thread import VideoThread
+from ESL.video_thread import VideoThread
 
 #2차원 배열로 key : vdiName , value : vdiUrl
 actions = ['일본어', '솔직하다', '오빠', '할아버지', '어른', '물놀이', '고리타분', '마라톤', '테니스', '영어', '조용하다', '수영', '특기', '형', '낚시', '똑똑하다', '수다스럽다', '노인', '청소년', '할머니', '청년', '계획적', '귀엽다', '야구', '친부', '독특', '친모', '긍정적', '누나', '한국인', '엉뚱', '없다', '권투', '여동생', '노래', '한국어']

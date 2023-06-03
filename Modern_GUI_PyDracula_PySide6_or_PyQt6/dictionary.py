@@ -7,7 +7,7 @@ from PySide6.QtCore import QStringListModel, Slot, QSortFilterProxyModel
 from PySide6.QtGui import QPixmap
 from PySide6.QtWidgets import QAbstractItemView
 
-from Modern_GUI_PyDracula_PySide6_or_PyQt6.video_thread import VideoThread
+from ESL.video_thread import VideoThread
 
 
 class Dictionary():
