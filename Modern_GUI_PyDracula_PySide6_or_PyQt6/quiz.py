@@ -66,6 +66,9 @@ class Quiz():
         self.isRun = False
         self.vid_thread.stop()
         self.quiz_thread.stop()
+        self.timer = QTimer()
+        self.timer.timeout.connect(self.update_label)
+        self.timer.start(self.interval)
 
     # 현재 학습 정보(비디오 이름) 저장
     def setCurrentAction(self, learnActionCategory):
@@ -156,11 +159,6 @@ class Quiz():
         convert_to_Qt_format = QtGui.QImage(rgb_image.data, w, h, bytes_per_line, QtGui.QImage.Format_RGB888)
         p = QPixmap.fromImage(convert_to_Qt_format)
         return p
-
-    def startQuiz(self):
-        self.timer = QTimer()
-        self.timer.timeout.connect(self.update_label)
-        self.timer.start(self.interval)
 
     def update_label(self):
         if self.current_text_index < len(self.text):
