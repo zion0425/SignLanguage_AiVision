@@ -128,14 +128,14 @@ class MainWindow(QMainWindow):
         # //////////////// 비디오 이름 세팅 ///////////////////////
         self.videoFileNames = {
             'hobby': ['물놀이', '수영', '마라톤', '낚시', '야구', '권투', '없다'],
-            'character': ['계획적', '똑똑하다', '귀엽다', '고리타분', '수다스럽다', '긍정적', '독특', '조용하다', '솔직하다', '엉뚱'],
+            'character': ['계획적', '똑똑하다', '귀엽다', '고리타분', '수다스럽다', '긍정적', '조용하다', '솔직하다', '엉뚱'],
             'family': ['친모', '친부', '여동생', '할아버지', '오빠', '할머니', '누나', '형'],
             'birth': ['한국인'],
             'age': ['노인', '어른', '청년', '청소년'],
             'language': ['한국어', '영어', '일본어']
         }
         # 카테고리별 학습할 수어의 개수를 저장하는 변수
-        self.learnCnt = {"hobby": 10, "character": 10, "family": 8, "birth": 1, "age": 4, "language": 3}
+        self.learnCnt = {"hobby": 7, "character": 9, "family": 8, "birth": 1, "age": 4, "language": 3}
 
         # 유저가 학습하고자 하는 카테고리의 value값을 저장하는 변수
         # 카테고리 선택할 때마다 해당 카테고리의 value값을 넣어준다.
@@ -144,8 +144,6 @@ class MainWindow(QMainWindow):
 
         #   비디오 캠 세팅 #############################
         self.initVideoWebcam('권투', widgets.vid_label, widgets.webcam_label)
-
-
 
         # USE CUSTOM TITLE BAR | USE AS "False" FOR MAC OR LINUX
         # ///////////////////////////////////////////////////////////////
@@ -312,10 +310,10 @@ class MainWindow(QMainWindow):
             # 유저 카운트, 학습해야 할 수어개수를 저장
             self.userLearnCnt = self.learnCnt[btnName.split("_")[0]] - 1
             # 현재 학습중인 비디오 이름 저장
-            self.currentVideoName = self.videoFileNames.get(self.currentCategory)[self.userLearnCnt]
+            print(self.currentCategory)
+            print(self.videoFileNames.get(self.currentCategory)[self.userLearnCnt])
+            self.currentVideoName = str(self.videoFileNames.get(self.currentCategory)[self.userLearnCnt])
             self.relodingVideo(self.currentVideoName)
-
-        # else :
 
     # RESIZE EVENTS
     # ///////////////////////////////////////////////////////////////
