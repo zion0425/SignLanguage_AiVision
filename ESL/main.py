@@ -22,6 +22,12 @@ import numpy as np
 import sys
 import os
 import platform
+
+# 프로젝트 루트를 sys.path에 추가 (ESL.xxx 형태의 절대 임포트를 지원하기 위함)
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+# 오래된 .h5 모델(fourth_model.h5 등)을 Keras 3 대신 레거시 Keras 2 엔진으로 로딩하기 위함
+os.environ.setdefault("TF_USE_LEGACY_KERAS", "1")
+
 from ESL.dictionary import Dictionary
 from ESL.quiz import Quiz
 from ESL.video_thread import VideoThread
@@ -210,7 +216,7 @@ class MainWindow(QMainWindow):
         # SET CUSTOM THEME
         # ///////////////////////////////////////////////////////////////
         useCustomTheme = False
-        themeFile = "themes\py_dracula_light.qss"
+        themeFile = "themes/py_dracula_light.qss"
 
         # SET THEME AND HACKS
         if useCustomTheme:
@@ -335,7 +341,7 @@ class MainWindow(QMainWindow):
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    app.setWindowIcon(QIcon("images/images/ESL_logo_small2.ico"))
+    app.setWindowIcon(QIcon(os.path.join(os.path.dirname(os.path.abspath(__file__)), "images/images/ESL_logo_small2.ico")))
     window = MainWindow()
 
     # 사전 객체 로딩

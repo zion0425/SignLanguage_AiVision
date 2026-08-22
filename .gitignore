@@ -129,3 +129,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# 원본 데모 영상 (100MB 초과, README에는 잘라낸 GIF만 사용)
+demo/demo.mp4
