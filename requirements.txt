@@ -1,0 +1,23 @@
+# Verified working environment: Python 3.12 (Windows).
+# Install with: python -m venv .venv && .venv\Scripts\pip install -r requirements.txt
+#
+# Notes:
+# - mediapipe is pinned to 0.10.14 because newer versions (1.x) removed the
+#   legacy `mediapipe.solutions` API (mp.solutions.hands) that this project uses.
+# - tensorflow is pinned to 2.16.1 to keep protobuf<5, which mediapipe 0.10.14 requires.
+# - tf_keras (Keras 2) is required alongside tensorflow so the old .h5 models
+#   under ESL/models load correctly. Set env var TF_USE_LEGACY_KERAS=1 before
+#   importing tensorflow (already done at the top of ESL/main.py).
+# - opencv-contrib-python is pinned to 4.10.0.84 because 5.x requires numpy>=2,
+#   which conflicts with tensorflow 2.16.1's numpy<2 requirement.
+
+PySide6==6.11.2
+opencv-contrib-python==4.10.0.84
+numpy==1.26.4
+tensorflow==2.16.1
+tf_keras==2.16.0
+mediapipe==0.10.14
+Pillow==12.3.0
+protobuf==4.25.9
+ml_dtypes==0.3.2
+scipy==1.13.1

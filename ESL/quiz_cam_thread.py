@@ -25,8 +25,13 @@ hands = mp_hands.Hands(
     min_detection_confidence=0.5,
     min_tracking_confidence=0.5)
 
-#한글 폰트 경로 지정
-fontpath = "/Library/Fonts/NanumGothic.ttf"
+#한글 폰트 경로 지정 (OS별 대체 경로 탐색)
+_font_candidates = [
+    "/Library/Fonts/NanumGothic.ttf",  # macOS
+    "C:/Windows/Fonts/malgun.ttf",  # Windows (맑은 고딕)
+    "/usr/share/fonts/truetype/nanum/NanumGothic.ttf",  # Linux
+]
+fontpath = next((p for p in _font_candidates if os.path.exists(p)), _font_candidates[0])
 font = ImageFont.truetype(fontpath,40, encoding='unic')
 
 
